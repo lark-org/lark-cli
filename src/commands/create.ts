@@ -74,7 +74,7 @@ export const create = async (name: string) => {
     await prompts({
       type: "select",
       name: "template",
-      message: `pick a template`,
+      message: `选择模板`,
       choices: Object.entries(templateRepoUrls)
         .map(v => ({
           title: v[0],
@@ -95,7 +95,7 @@ export const create = async (name: string) => {
       await prompts({
         type: "text",
         name: "template",
-        message: "please input the custom template's git url"
+        message: "请输入自定义的模板地址"
       })
     ).template;
   } else {
@@ -103,7 +103,7 @@ export const create = async (name: string) => {
       await prompts({
         type: "select",
         name: "platform",
-        message: `pick a platform`,
+        message: `选择平台`,
         choices: Object.entries(platforms).map(v => ({
           title: v[0],
           value: v[1]
@@ -111,19 +111,6 @@ export const create = async (name: string) => {
       })
     ).platform;
   }
-
-  const port = (
-    await prompts({
-      type: "text",
-      name: "port",
-      message:
-        "please input a port for your project (must be a number below 65535)",
-      validate: prev => {
-        const p = parseInt(prev, 10);
-        return p > 0 && p < 65535;
-      }
-    })
-  ).port;
 
   if (platform && platform === platforms.Default) {
     mobile = (
@@ -138,6 +125,19 @@ export const create = async (name: string) => {
       })
     ).mobile;
   }
+
+  const port = (
+    await prompts({
+      type: "text",
+      name: "port",
+      message:
+        "输入端口号 (must be a number below 65535)",
+      validate: prev => {
+        const p = parseInt(prev, 10);
+        return p > 0 && p < 65535;
+      }
+    })
+  ).port;
 
   const spinner = ora(`Generating project in ${chalk.yellow(dest)}`);
   spinner.start();
