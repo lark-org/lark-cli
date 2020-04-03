@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.2](https://github.com/virgoone/lark-cli/compare/v1.0.2-alpha.0...v1.0.2) (2020-04-03)
+
+
+### Features
+
+* 升级依赖和修复部分问题 ([3c36d45](https://github.com/virgoone/lark-cli/commit/3c36d45f0e97a47bcfe46404e2c4503bee5f5e4f))
+
 ### [1.0.2-alpha.0](https://github.com/virgoone/lark-cli/compare/v1.0.1...v1.0.2-alpha.0) (2020-04-03)
 
 

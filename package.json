@@ -1,6 +1,6 @@
 {
   "name": "@virgoone/lark-cli",
-  "version": "1.0.2-alpha.0",
+  "version": "1.0.2",
   "description": "cli",
   "main": "dist/index.js",
   "author": "me@virgo.one",
