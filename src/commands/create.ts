@@ -10,7 +10,7 @@ import prompts from "prompts";
 import { installDependencies } from "../utils/dependencies";
 
 const templateRepoUrls = {
-  default: "git@github.com:virgoone/project-template.git"
+  '默认': "git@github.com:virgoone/project-template.git"
 };
 const platforms = {
   Default: "default",
@@ -50,7 +50,7 @@ export const create = async (name: string) => {
       await prompts({
         type: "select",
         name: "cover",
-        message: `target path ${name} has already exists, pick an action`,
+        message: `文件 ${name} 已经存在，是否覆盖？`,
         choices: [
           {
             title: "cover",
@@ -81,7 +81,7 @@ export const create = async (name: string) => {
           value: v[1]
         }))
         .concat({
-          title: "custom",
+          title: "自定义",
           value: ""
         })
     })
@@ -217,5 +217,4 @@ export const create = async (name: string) => {
       }
     });
 
-  console.log(templateUrl);
 };
