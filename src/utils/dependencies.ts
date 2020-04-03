@@ -26,10 +26,21 @@ export const installDependencies = (targetPath: string) => {
     });
 
     child.on("error", err => {
+      console.log('error call -->', err)
       reject(err);
     });
 
+    child.on("exit", code => {
+      console.log('exit call -->', code)
+      if (code !== 0) {
+        reject(new Error("command failed: yarn"));
+        return;
+      }
+      resolve();
+    });
+
     child.on("close", code => {
+      console.log('close call -->', code)
       if (code !== 0) {
         reject(new Error("command failed: yarn"));
         return;
