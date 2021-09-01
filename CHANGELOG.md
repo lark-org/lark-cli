@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/virgoone/lark-cli/compare/v1.0.2...v1.0.4) (2021-09-01)
+
+### Bug Fixes
+
+- 修改 npmrc ([b34c3b5](https://github.com/virgoone/lark-cli/commit/b34c3b5117150d78f4fe3509c85522dc6a7d7793))
+- 修改 workflow ([657e480](https://github.com/virgoone/lark-cli/commit/657e480fd67c9260da8b3f93484299380298db2f))
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
