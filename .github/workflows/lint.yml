@@ -38,3 +38,5 @@ jobs:
       # - run: echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" >> ~/.npmrc
       - name: 执行 Lint
         run: yarn lint
+      - name: 执行 Build
+        run: yarn build

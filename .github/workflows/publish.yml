@@ -28,8 +28,10 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: 安装依赖
         run: yarn install --frozen-lockfile
+      - name: 执行构建
+        run: npm build
       # - run: echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" >> ~/.npmrc
-      - name: 构建并发布
+      - name: 发布
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
