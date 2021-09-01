@@ -9,13 +9,7 @@
     "noImplicitAny": true,
     "esModuleInterop": true,
     "inlineSourceMap": true,
-    "lib": [
-      "es5",
-      "scripthost"
-    ]
+    "lib": ["es5", "scripthost"]
   },
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+  "exclude": ["node_modules", "dist"]
 }
