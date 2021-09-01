@@ -1,17 +1,17 @@
-[toc]
+# <em><b>LARK-CRA</b></em>
 
-## 简介
+可用于快速创建`react`项目，提供控制台、移动端、普通网页项目模版
 
-新建项目使用，包含移动端、admin端和node端，选择不同的模板配置生成不同的项目
+## Installation
 
-## 使用
-
-### 新建项目
-
-命令行输入
-
-``` shell
-yarn global add @virgoone/lark-cli
-lark-cli create 你的项目名
+```sh
+npm install -g lark-cra
+# or
+yarn add --global lark-cra
 ```
 
+## Usage
+
+```js
+lark create <project - name>
+```
