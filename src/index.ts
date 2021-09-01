@@ -2,19 +2,19 @@
 import yargs from 'yargs'
 import { create } from './commands/create'
 
-yargs.command<{ name: string }>({
-  command: 'create [name]',
-  builder: {
-    name: {
-      description: 'project name',
+// eslint-disable-next-line no-unused-expressions
+yargs
+  .command<{ name: string }>({
+    command: 'create [name]',
+    builder: {
+      name: {
+        description: 'project name'
+      }
     },
-  },
-  handler: args => create(args.name),
-
-})
+    handler: (args) => create(args.name)
+  })
   .demandCommand()
   .help()
   .option('version', {
-    alias: 'v',
-  })
-  .argv
+    alias: 'v'
+  }).argv
