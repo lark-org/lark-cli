@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/lark-org/lark-cli/compare/v1.1.0...v1.1.1) (2021-09-02)
+
+### Bug Fixes
+
+- https://github.com/sindresorhus/ora/issues/183 bug ([67918a3](https://github.com/lark-org/lark-cli/commit/67918a39bed4531ea1d994af3dd5eb1486bc3b39))
+- npm access ([85acd13](https://github.com/lark-org/lark-cli/commit/85acd13e64ed64b1d0762b5d91eea6dbdff96fe0))
+
 # [1.1.0](https://github.com/virgoone/lark-cli/compare/v1.0.5...v1.1.0) (2021-09-02)
 
 ### Bug Fixes
