@@ -13,7 +13,7 @@ import { installDependencies } from '../utils/dependencies'
 import { l } from '../utils/log'
 
 const templateRepoUrls = {
-  默认: 'git@github.com:virgoone/project-template.git'
+  默认: 'https://github.com/virgoone/project-template.git'
 }
 const platforms = {
   Default: 'default',
