@@ -2,7 +2,7 @@
   "name": "@lark-org/lark-cli",
   "version": "1.1.0",
   "description": "快速创建 React 项目",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "author": "me@virgo.one",
   "license": "MIT",
   "keywords": [
@@ -13,8 +13,11 @@
     "cra"
   ],
   "files": [
-    "dist"
+    "lib"
   ],
+  "engines": {
+    "node": "^12.0.0 || >= 14.0.0"
+  },
   "scripts": {
     "start": "tsc -w",
     "build": "tsc",
@@ -27,10 +30,14 @@
     "prepare": "husky install"
   },
   "bin": {
-    "lark": "./dist/index.js"
+    "lark": "./lib/index.js"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:lark-org/lark-cli.git"
   },
   "lint-staged": {
     "*.ts": "eslint src --fix",
@@ -43,13 +50,14 @@
     "fs-extra": "^10.0.0",
     "handlebars": "^4.7.7",
     "metalsmith": "^2.3.0",
-    "ora": "^6.0.0",
+    "ora": "^5.3.0",
     "prompts": "^2.4.1",
     "readline": "^1.3.0",
     "yargs": "^17.1.1"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^3.3.0",
+    "@tsconfig/node12": "^1.0.9",
     "@types/chalk": "^2.2.0",
     "@types/consolidate": "^0.14.1",
     "@types/execa": "^2.0.0",
