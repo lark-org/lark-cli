@@ -1,3 +1,13 @@
+# [1.1.0](https://github.com/virgoone/lark-cli/compare/v1.0.5...v1.1.0) (2021-09-02)
+
+### Bug Fixes
+
+- update npmrc ([33aaf6e](https://github.com/virgoone/lark-cli/commit/33aaf6eb4fe0a5f3fe81cb004c7440a5ba89ac23))
+
+### Features
+
+- 转移项目 ([6988cf1](https://github.com/virgoone/lark-cli/commit/6988cf13b7e02b5604d9afc9da851b002f0fd110))
+
 ## [1.0.5](https://github.com/virgoone/lark-cli/compare/v1.0.2...v1.0.5) (2021-09-02)
 
 ### Bug Fixes
