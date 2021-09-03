@@ -3308,7 +3308,7 @@ optionator@^0.9.1:
     type-check "^0.4.0"
     word-wrap "^1.2.3"
 
-ora@*:
+ora@*, ora@^6.0.0:
   version "6.0.0"
   resolved "https://registry.nlark.com/ora/download/ora-6.0.0.tgz?cache=0&sync_timestamp=1629755504079&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fora%2Fdownload%2Fora-6.0.0.tgz#4081c50984a306e73133ff224bc9e4ba54d44d8b"
   integrity sha1-QIHFCYSjBucxM/8iS8nkulTUTYs=
