@@ -1579,9 +1579,9 @@ eslint-config-airbnb-base@^14.2.1:
     object.entries "^1.1.2"
 
 eslint-config-lark@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.nlark.com/eslint-config-lark/download/eslint-config-lark-0.1.1.tgz?cache=0&sync_timestamp=1630502542367&other_urls=https%3A%2F%2Fregistry.nlark.com%2Feslint-config-lark%2Fdownload%2Feslint-config-lark-0.1.1.tgz#3b48b2415b8d8576cc1c22977e33bc5a4eab22ee"
-  integrity sha1-O0iyQVuNhXbMHCKXfjO8Wk6rIu4=
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/eslint-config-lark/-/eslint-config-lark-0.1.2.tgz#29615752a794f667c4e3b097c627fce990108b0a"
+  integrity sha512-RsHFnoY9ZB8emVr8BNXk+v4Ml3C6NSGLPqrs6HhV1TO2aUxvoh/ua34wagHzaNGUxxkut5Hl1EpIHBbxpMto7Q==
   dependencies:
     "@emotion/eslint-plugin" "^11.2.0"
     "@typescript-eslint/eslint-plugin" "^4.29.1"
