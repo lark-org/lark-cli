@@ -1,3 +1,9 @@
+# [1.2.0](https://github.com/lark-org/lark-cli/compare/v1.1.1...v1.2.0) (2021-11-07)
+
+### Features
+
+- 升级项目设置 ([347b057](https://github.com/lark-org/lark-cli/commit/347b0573a00663dee90f5efe4493c1bc9c587ebc))
+
 ## [1.1.1](https://github.com/lark-org/lark-cli/compare/v1.1.0...v1.1.1) (2021-09-02)
 
 ### Bug Fixes
