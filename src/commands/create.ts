@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable promise/no-callback-in-promise */
 /* eslint-disable promise/catch-or-return */
 import chalk from 'chalk'
@@ -17,11 +18,19 @@ const templateRepoUrls = {
 }
 const platforms = {
   Default: 'default',
-  Console: 'console'
+  Console: 'console',
+  Mobile: 'mobile'
 }
 const browserslist = {
   mobile: ['Android >= 4', 'iOS >= 9'],
-  pc: ['last 1 version', '> 1%', 'IE 10']
+  pc: {
+    production: ['>0.2%', 'not dead', 'not op_mini all'],
+    development: [
+      'last 1 chrome version',
+      'last 1 firefox version',
+      'last 1 safari version'
+    ]
+  }
 }
 
 export const removeDirectory = async (directoryPath: string) => {
@@ -115,18 +124,8 @@ export const create = async (name: string) => {
     ).platform
   }
 
-  if (platform && platform === platforms.Default) {
-    mobile = (
-      await prompts({
-        type: 'select',
-        name: 'mobile',
-        message: `是否移动端`,
-        choices: [
-          { title: '是', value: true },
-          { title: '否', value: false }
-        ]
-      })
-    ).mobile
+  if (platform && platform === platforms.Mobile) {
+    mobile = true
   }
 
   const { port } = await prompts({
@@ -159,7 +158,7 @@ export const create = async (name: string) => {
     console.warn('获取 Git 用户失败')
   }
   author = author ? author.toString().trim() : ''
-  email = email ? ` <${email.toString().trim()}> ` : ''
+  email = email ? `< ${email.toString().trim()} > ` : ''
 
   Metalsmith(__dirname)
     .metadata({
@@ -205,18 +204,19 @@ export const create = async (name: string) => {
         await fs.writeFile(pkgFile, JSON.stringify(pkg, null, 2))
         spinner.stopAndPersist({ symbol: '✨ ' })
         l(`📦  Installing dependencies...`)
+        console.log()
         await execa('git', ['init'], { cwd: dest })
         // 像husky这样的package需要在git init之后安装才有用
         await installDependencies(dest)
         l('dependencies has been installed')
         await execa('git', ['add', '-A'], { cwd: dest })
-        await execa('git', ['commit', '-m', 'feat(init): initial commit'], {
-          cwd: dest
-        })
+        console.log()
+        console.log()
         l(`Successfully created project ${chalk.yellow(name)}.`)
         l(`Get started with the following commands:\n\n`)
         l(chalk.cyan(` ${chalk.gray('$')} cd ${name}`))
         l(chalk.cyan(` ${chalk.gray('$')} yarn start`))
+        console.log()
       } catch (e) {
         console.warn(e)
         spinner.stop()
