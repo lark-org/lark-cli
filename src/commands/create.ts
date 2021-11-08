@@ -158,7 +158,7 @@ export const create = async (name: string) => {
     console.warn('获取 Git 用户失败')
   }
   author = author ? author.toString().trim() : ''
-  email = email ? `< ${email.toString().trim()} > ` : ''
+  email = email ? `${email.toString().trim()}` : ''
 
   Metalsmith(__dirname)
     .metadata({
@@ -200,6 +200,7 @@ export const create = async (name: string) => {
         const pkgFile = path.join(dest, 'package.json')
         // eslint-disable-next-line
         const pkg = require(pkgFile)
+        pkg.name = name
         pkg.browserslist = mobile ? browserslist.mobile : browserslist.pc
         await fs.writeFile(pkgFile, JSON.stringify(pkg, null, 2))
         spinner.stopAndPersist({ symbol: '✨ ' })
