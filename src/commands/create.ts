@@ -200,8 +200,13 @@ export const create = async (name: string) => {
         const pkgFile = path.join(dest, 'package.json')
         // eslint-disable-next-line
         const pkg = require(pkgFile)
+
         pkg.name = name
         pkg.browserslist = mobile ? browserslist.mobile : browserslist.pc
+        if (pkg.scripts.start) {
+          pkg.scripts.start = `lark-cli-service start -p ${port}`
+        }
+
         await fs.writeFile(pkgFile, JSON.stringify(pkg, null, 2))
         spinner.stopAndPersist({ symbol: '✨ ' })
         l(`📦  Installing dependencies...`)
