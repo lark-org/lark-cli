@@ -3,7 +3,7 @@
 /* eslint-disable promise/catch-or-return */
 import chalk from 'chalk'
 import { handlebars } from 'consolidate'
-import execa from 'execa'
+import { execa } from 'execa'
 import fs from 'fs-extra'
 import Metalsmith from 'metalsmith'
 import ora from 'ora'
