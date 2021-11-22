@@ -3,7 +3,7 @@
 /* eslint-disable promise/catch-or-return */
 import chalk from 'chalk'
 import { handlebars } from 'consolidate'
-import { execa } from 'execa'
+import execa from 'execa'
 import fs from 'fs-extra'
 import Metalsmith from 'metalsmith'
 import ora from 'ora'
@@ -33,6 +33,8 @@ const browserslist = {
   }
 }
 
+export const exit = () => process.exit(1)
+
 export const removeDirectory = async (directoryPath: string) => {
   const name = path.basename(directoryPath)
   const spinner = ora(`Removing target directory ${name}`)
@@ -42,18 +44,40 @@ export const removeDirectory = async (directoryPath: string) => {
 }
 
 export const cloneGitRepo = async (gitRepoUrl: string) => {
+  const gitSpinner = ora(`获取模版`)
+  gitSpinner.start()
   const tmp = path.resolve(os.tmpdir(), 'lark-cli')
   await fs.remove(tmp)
   await execa('git', ['clone', gitRepoUrl, tmp, '--depth', '1'])
   await fs.remove(path.resolve(`${tmp}.git`))
+  gitSpinner.stop()
   return tmp
 }
 
-export const create = async (name: string) => {
+const getGitUserInfo = async () => {
+  const gitSpinner = ora(`获取 Git 信息`)
+  gitSpinner.start()
+  let author
+  let email
+  try {
+    author = (await execa('git', ['config', '--get', 'user.name'])).stdout
+    email = (await execa('git', ['config', '--get', 'user.email'])).stdout
+  } catch (e) {
+    console.warn('获取 Git 用户失败')
+  }
+  gitSpinner.stop()
+  author = author ? author.toString().trim() : ''
+  email = email ? `${email.toString().trim()}` : ''
+
+  return { author, email }
+}
+
+const create = async (name: string, options?: { [key: string]: any }) => {
   if (!name) {
     l('please input a legal project name')
     return
   }
+  console.log('options--->', name, options)
 
   const dest = path.join(process.cwd(), name)
   if (fs.existsSync(dest) && (await fs.stat(dest)).isDirectory()) {
@@ -123,6 +147,10 @@ export const create = async (name: string) => {
       })
     ).platform
   }
+  if (!templateUrl) {
+    console.log('please input a legal template url')
+    process.exit(0)
+  }
 
   if (platform && platform === platforms.Mobile) {
     mobile = true
@@ -146,19 +174,11 @@ export const create = async (name: string) => {
   } catch (e) {
     console.warn(e)
     spinner.stop()
+    exit()
     return
   }
 
-  let author
-  let email
-  try {
-    author = (await execa('git', ['config', '--get', 'user.name'])).stdout
-    email = (await execa('git', ['config', '--get', 'user.email'])).stdout
-  } catch (e) {
-    console.warn('获取 Git 用户失败')
-  }
-  author = author ? author.toString().trim() : ''
-  email = email ? `${email.toString().trim()}` : ''
+  const { email, author } = await getGitUserInfo()
 
   Metalsmith(__dirname)
     .metadata({
@@ -229,3 +249,4 @@ export const create = async (name: string) => {
       }
     })
 }
+export default create
