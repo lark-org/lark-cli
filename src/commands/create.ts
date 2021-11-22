@@ -3,7 +3,7 @@
 /* eslint-disable promise/catch-or-return */
 import chalk from 'chalk'
 import { handlebars } from 'consolidate'
-import execa from 'execa'
+import { execa } from 'execa'
 import fs from 'fs-extra'
 import Metalsmith from 'metalsmith'
 import ora from 'ora'
@@ -49,7 +49,7 @@ export const cloneGitRepo = async (gitRepoUrl: string) => {
   return tmp
 }
 
-const create = async (name: string) => {
+export const create = async (name: string) => {
   if (!name) {
     l('please input a legal project name')
     return
@@ -229,4 +229,3 @@ const create = async (name: string) => {
       }
     })
 }
-export default create
