@@ -1,37 +1,18 @@
 #!/usr/bin/env node
-import { Command } from 'commander'
-
-import chalk from 'chalk'
+import yargs from 'yargs'
 import create from './commands/create'
 
-const bootstrap = (): void => {
-  const program = new Command()
-
-  program
-    .command('create <name>')
-    .description('Create react application.')
-    .action((name: string, command: Command) => {
-      if (!name) {
-        throw new Error('Please specify the project name.')
+// eslint-disable-next-line no-unused-expressions
+yargs
+  .command<{ name: string }>({
+    command: 'create [name]',
+    builder: {
+      name: {
+        description: 'project name'
       }
-      create(name, command)
-    })
-    .addHelpText(
-      'after',
-      `
-  
-  Example call:
-    $ lark create ${chalk.green('<project-name>')}`
-    )
-    .showHelpAfterError()
-  program
-    .version(
-      // eslint-disable-next-line
-      require('../package.json').version,
-      '-v, --version',
-      'Output the current version.'
-    )
-    .helpOption('-h, --help', 'Output usage information.')
-    .parse(process.argv)
-}
-bootstrap()
+    },
+    handler: (args) => create(args.name)
+  })
+  .demandCommand()
+  .help()
+  .version().argv
