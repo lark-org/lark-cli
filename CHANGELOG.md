@@ -1,3 +1,17 @@
+- feat(#27): 更新 commander (#32) (49e2a23)
+- Revert "chore(deps): 回退版本，因 esm loader 问题" (7a35205)
+- Revert "feat: 切换 commander" (27d335e)
+- feat: 切换 commander (30a1742)
+- chore(deps): 回退版本，因 esm loader 问题 (c942c64)
+- chore: 🤖 升级依赖 (5212760)
+- chore(deps-dev): bump lint-staged from 12.0.2 to 12.0.3 (#25) (4b9cbd6)
+- chore(deps-dev): bump typescript from 4.4.4 to 4.5.2 (#24) (af225c1)
+- chore(deps-dev): bump lint-staged from 11.2.6 to 12.0.2 (#22) (b857c1c)
+- chore(deps-dev): bump release-it from 14.11.6 to 14.11.7 (#21) (ce4478b)
+- chore(deps-dev): bump eslint-config-lark from 0.1.3 to 0.1.5 (#19) (05a86b6)
+- fix: 端口号默认不能更改问题 (4cf4766)
+- fix: 生成的项目名字未覆盖问题 (942e4f3)
+
 # [1.2.0](https://github.com/lark-org/lark-cli/compare/v1.1.1...v1.2.0) (2021-11-07)
 
 ### Features
