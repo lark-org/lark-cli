@@ -1,3 +1,5 @@
+## [1.3.1](https://github.com/lark-org/lark-cli/compare/v1.3.0...v1.3.1) (2021-11-23)
+
 - feat(#27): 更新 commander (#32) (49e2a23)
 - Revert "chore(deps): 回退版本，因 esm loader 问题" (7a35205)
 - Revert "feat: 切换 commander" (27d335e)
