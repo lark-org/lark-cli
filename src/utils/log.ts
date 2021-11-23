@@ -1,12 +1,5 @@
-import chalk from 'chalk'
+/* eslint-disable no-console */
+import * as chalk from 'chalk'
 
-export const l = (msg: string): void =>
-  console.log(`${chalk.green('[Lark]')} - ${msg}`)
-
-export const w = (msg: string): void =>
-  console.warn(`${chalk.yellow('[Lark]')} - ${msg}`)
-
-export default {
-  l,
-  w
-}
+export const ERROR_PREFIX = chalk.bgRgb(210, 0, 75).bold.rgb(0, 0, 0)(' Error ')
+export const INFO_PREFIX = chalk.bgRgb(60, 190, 100).bold.rgb(0, 0, 0)(' Info ')
