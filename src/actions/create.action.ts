@@ -1,17 +1,18 @@
 /* eslint-disable no-console */
 /* eslint-disable promise/no-callback-in-promise */
 /* eslint-disable promise/catch-or-return */
-import chalk from 'chalk'
 import { handlebars } from 'consolidate'
-import execa from 'execa'
-import fs from 'fs-extra'
-import Metalsmith from 'metalsmith'
-import ora from 'ora'
-import os from 'os'
-import path from 'path'
-import prompts from 'prompts'
+import * as execa from 'execa'
+import * as fs from 'fs-extra'
+import * as ora from 'ora'
+import * as os from 'os'
+import * as path from 'path'
+import * as prompts from 'prompts'
+import * as chalk from 'chalk'
+import * as Metalsmith from 'metalsmith'
+import { Input } from '../utils/command.input'
 import { installDependencies } from '../utils/dependencies'
-import { l } from '../utils/log'
+import { AbstractAction } from './abstract.action'
 
 const templateRepoUrls = {
   默认: 'https://github.com/virgoone/project-template.git'
@@ -72,39 +73,7 @@ const getGitUserInfo = async () => {
   return { author, email }
 }
 
-const create = async (name: string, options?: { [key: string]: any }) => {
-  if (!name) {
-    l('please input a legal project name')
-    return
-  }
-  console.log('options--->', name, options)
-
-  const dest = path.join(process.cwd(), name)
-  if (fs.existsSync(dest) && (await fs.stat(dest)).isDirectory()) {
-    // 文件名冲突时覆盖逻辑
-    const forceCover: boolean = (
-      await prompts({
-        type: 'select',
-        name: 'cover',
-        message: `文件 ${name} 已经存在，是否覆盖？`,
-        choices: [
-          {
-            title: 'cover',
-            value: true
-          },
-          {
-            title: 'cancel',
-            value: false
-          }
-        ]
-      })
-    ).cover
-    if (!forceCover) {
-      return
-    }
-    await removeDirectory(dest)
-  }
-
+const getTemplateInfo = async () => {
   // 选择合适模板或使用自定义模板
   let templateUrl = (
     await prompts({
@@ -149,12 +118,58 @@ const create = async (name: string, options?: { [key: string]: any }) => {
   }
   if (!templateUrl) {
     console.log('please input a legal template url')
-    process.exit(0)
   }
 
   if (platform && platform === platforms.Mobile) {
     mobile = true
   }
+
+  return { templateUrl, platform, mobile }
+}
+const defaultTemplateInfo = {
+  templateUrl: templateRepoUrls.默认,
+  platform: platforms.Default,
+  mobile: false
+}
+
+const create = async (name: string, options: Input[]) => {
+  const dest = path.join(process.cwd(), name)
+  if (fs.existsSync(dest) && (await fs.stat(dest)).isDirectory()) {
+    // 文件名冲突时覆盖逻辑
+    const forceCover: boolean = (
+      await prompts({
+        type: 'select',
+        name: 'cover',
+        message: `文件 ${name} 已经存在，是否覆盖？`,
+        choices: [
+          {
+            title: 'cover',
+            value: true
+          },
+          {
+            title: 'cancel',
+            value: false
+          }
+        ]
+      })
+    ).cover
+    if (!forceCover) {
+      return
+    }
+    await removeDirectory(dest)
+  }
+  const shouldSkipInstall = options.some(
+    (option) => option.name === 'skip-install' && option.value === true
+  )
+  const shouldSkipGit = options.some(
+    (option) => option.name === 'skip-git' && option.value === true
+  )
+  const quickStart = options.some(
+    (option) => option.name === 'quick-start' && option.value === true
+  )
+  const { templateUrl, platform, mobile } = quickStart
+    ? defaultTemplateInfo
+    : await getTemplateInfo()
 
   const { port } = await prompts({
     type: 'text',
@@ -174,7 +189,6 @@ const create = async (name: string, options?: { [key: string]: any }) => {
   } catch (e) {
     console.warn(e)
     spinner.stop()
-    exit()
     return
   }
 
@@ -188,20 +202,21 @@ const create = async (name: string, options?: { [key: string]: any }) => {
       port,
       mobile
     })
-    .source(path.join(tempPath, platform ? `template/${platform}` : 'template'))
+    .source(path.join(tempPath, platform ? `template/${platform}` : ''))
     .destination(dest)
-    .use((files, metalsmith, callback) => {
+    .use(async (files, metalsmith, callback) => {
       const keys = Object.keys(files)
+
       const metadata = metalsmith.metadata()
 
-      Promise.all(
+      await Promise.all(
         keys.map((key) => {
           const str = files[key].contents.toString()
-          return new Promise((resolve) => {
+          return new Promise((resolve, reject) => {
             // eslint-disable-next-line consistent-return
             handlebars.render(str, metadata, (err, res) => {
               if (err) {
-                return resolve(err)
+                reject(err)
               }
               // eslint-disable-next-line no-param-reassign
               files[key].contents = Buffer.from(res)
@@ -209,10 +224,8 @@ const create = async (name: string, options?: { [key: string]: any }) => {
             })
           })
         })
-        // eslint-disable-next-line promise/always-return
-      ).then(() => {
-        callback(null, files, metalsmith)
-      })
+      )
+      callback(null, files, metalsmith)
     })
     .build(async (err) => {
       try {
@@ -229,19 +242,29 @@ const create = async (name: string, options?: { [key: string]: any }) => {
 
         await fs.writeFile(pkgFile, JSON.stringify(pkg, null, 2))
         spinner.stopAndPersist({ symbol: '✨ ' })
-        l(`📦  Installing dependencies...`)
-        console.log()
-        await execa('git', ['init'], { cwd: dest })
+
+        if (!shouldSkipGit) {
+          await execa('git', ['init'], { cwd: dest })
+        }
+
         // 像husky这样的package需要在git init之后安装才有用
-        await installDependencies(dest)
-        l('dependencies has been installed')
-        await execa('git', ['add', '-A'], { cwd: dest })
+        if (!shouldSkipInstall) {
+          console.log(`📦  Installing dependencies...`)
+          console.log()
+          await installDependencies(dest)
+          console.log('dependencies has been installed')
+        }
+
+        if (!shouldSkipGit) {
+          await execa('git', ['add', '-A'], { cwd: dest })
+        }
+
         console.log()
         console.log()
-        l(`Successfully created project ${chalk.yellow(name)}.`)
-        l(`Get started with the following commands:\n\n`)
-        l(chalk.cyan(` ${chalk.gray('$')} cd ${name}`))
-        l(chalk.cyan(` ${chalk.gray('$')} yarn start`))
+        console.log(`Successfully created project ${chalk.yellow(name)}.`)
+        console.log(`Get started with the following commands:\n\n`)
+        console.info(chalk.cyan(` ${chalk.gray('$')} cd ${name}`))
+        console.info(chalk.cyan(` ${chalk.gray('$')} yarn start`))
         console.log()
       } catch (e) {
         console.warn(e)
@@ -249,4 +272,17 @@ const create = async (name: string, options?: { [key: string]: any }) => {
       }
     })
 }
-export default create
+export class CreateAction extends AbstractAction {
+  // eslint-disable-next-line class-methods-use-this
+  public async handle(inputs: Input[], options: Input[]) {
+    const getApplicationNameInput = inputs.find(
+      (input) => input.name === 'name'
+    )
+
+    if (!getApplicationNameInput?.value) {
+      console.log('please input a legal project name')
+      return
+    }
+    await create(getApplicationNameInput.value as string, options)
+  }
+}
