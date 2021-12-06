@@ -3,16 +3,20 @@ updates:
   - package-ecosystem: npm
     directory: '/'
     schedule:
-      interval: 'daily'
-      time: '09:00'
+      interval: "weekly"
+      # Check for npm updates on Sundays
+      day: "sunday"
+      time: '10:30'
       # Use ShangHai Standard Time (UTC +08:00)
       timezone: 'Asia/Shanghai'
     open-pull-requests-limit: 10
   - package-ecosystem: github-actions
     directory: '/'
     schedule:
-      interval: 'daily'
-      time: '09:00'
+      interval: "weekly"
+      # Check for npm updates on Sundays
+      day: "sunday"
+      time: '10:30'
       # Use ShangHai Standard Time (UTC +08:00)
       timezone: 'Asia/Shanghai'
     open-pull-requests-limit: 10
