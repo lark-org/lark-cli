@@ -901,10 +901,10 @@ eslint-config-airbnb-base@^15.0.0:
     object.entries "^1.1.5"
     semver "^6.3.0"
 
-eslint-config-lark@^0.1.5:
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/eslint-config-lark/-/eslint-config-lark-0.1.8.tgz#865ba8edc053697f29b468f5e05c3652a2b73bb3"
-  integrity sha512-khwZOZsDkWSv0xZIkZ8GVMegs0AX4fxFiSdJHMGCbWru6caq//t1V/7A0vEebwt4EYcDbE0RsTY2iiAkKtIpLA==
+eslint-config-lark@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-lark/-/eslint-config-lark-0.3.0.tgz#76b92497f4e942d489071e079884d09a0d5ceeac"
+  integrity sha512-/reiK8Zot6VMjllJvDX5WjQmeMslC8xZ6zowJx4mJ4wdzP6VcRqEgBkXwBPnmKN77dyQfU6mcZ9rxBSYnvXvjw==
   dependencies:
     "@emotion/eslint-plugin" "^11.2.0"
     "@typescript-eslint/eslint-plugin" "^5.3.0"
@@ -915,7 +915,7 @@ eslint-config-lark@^0.1.5:
     eslint-plugin-compat "^4.0.0"
     eslint-plugin-import "^2.22.1"
     eslint-plugin-jest "^25.0.1"
-    eslint-plugin-jest-dom "^3.9.0"
+    eslint-plugin-jest-dom "^4.0.0"
     eslint-plugin-prettier "^4.0.0"
     eslint-plugin-promise "^6.0.0"
     eslint-plugin-react "^7.21.5"
@@ -989,10 +989,10 @@ eslint-plugin-import@^2.22.1:
     resolve "^1.20.0"
     tsconfig-paths "^3.11.0"
 
-eslint-plugin-jest-dom@^3.9.0:
-  version "3.9.4"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest-dom/-/eslint-plugin-jest-dom-3.9.4.tgz#74f5b5b5828790cdbec6e720eb4129f7c365233b"
-  integrity sha512-VRkaALGIhyxinnewZFHe2WJsRWp3TONpXysVXK1IUNJHCpJAIM9yRrI7fQ8i5F6UYE7+DAnvNhSSJZesLTonug==
+eslint-plugin-jest-dom@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest-dom/-/eslint-plugin-jest-dom-4.0.0.tgz#cacc3a560afc334d512068eebaa252945a03d81b"
+  integrity sha512-q4YpUhf2KTopJcdwbNk8+XUbEB7lFDEV0tfoaHg3D2pOl4AFhEAEFVLNPw4pkd6ggVJMPR5gP6SrhsEbbhtlug==
   dependencies:
     "@babel/runtime" "^7.16.3"
     "@testing-library/dom" "^7.31.2"
