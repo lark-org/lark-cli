@@ -208,14 +208,21 @@ const create = async (name: string, options: Input[]) => {
       const keys = Object.keys(files)
 
       const metadata = metalsmith.metadata()
+      console.log()
 
       await Promise.all(
         keys.map((key) => {
+          console.log(chalk.green(`✔️写入 ${key}`))
+          // 控制台应用不需要替换
+          if (platform === platforms.Console) {
+            return Promise.resolve()
+          }
           const str = files[key].contents.toString()
           return new Promise((resolve, reject) => {
             // eslint-disable-next-line consistent-return
             handlebars.render(str, metadata, (err, res) => {
               if (err) {
+                console.error(`${key} 模板渲染失败}`, err)
                 reject(err)
               }
               // eslint-disable-next-line no-param-reassign
@@ -225,6 +232,7 @@ const create = async (name: string, options: Input[]) => {
           })
         })
       )
+      console.log()
       callback(null, files, metalsmith)
     })
     .build(async (err) => {
