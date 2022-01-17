@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/lark-org/lark-cli/compare/v1.3.1...v1.3.2) (2022-01-17)
+
+
+### Bug Fixes
+
+* 解决创建项目时 模版渲染问题 ([83e88f2](https://github.com/lark-org/lark-cli/commit/83e88f261c1c78d2b3b8d071d82f6ac29acd19d3))
+
 ## [1.3.1](https://github.com/lark-org/lark-cli/compare/v1.3.0...v1.3.1) (2021-11-23)
 
 - feat(#27): 更新 commander (#32) (49e2a23)
