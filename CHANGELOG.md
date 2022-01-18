@@ -1,16 +1,20 @@
-## [1.3.3](https://github.com/lark-org/lark-cli/compare/v1.3.2...v1.3.3) (2022-01-18)
-
+## [1.3.4](https://github.com/lark-org/lark-cli/compare/v1.3.3...v1.3.4) (2022-01-18)
 
 ### Bug Fixes
 
-* 修改CI名称 ([1ccdb93](https://github.com/lark-org/lark-cli/commit/1ccdb937d0e368e9ccfc714e765c72a160297a22))
+- 修复发布 npm 时未执行 build 问题 ([49316c8](https://github.com/lark-org/lark-cli/commit/49316c8537146710202e38571f1b6b5d3d81de1b))
+
+## [1.3.3](https://github.com/lark-org/lark-cli/compare/v1.3.2...v1.3.3) (2022-01-18)
+
+### Bug Fixes
+
+- 修改 CI 名称 ([1ccdb93](https://github.com/lark-org/lark-cli/commit/1ccdb937d0e368e9ccfc714e765c72a160297a22))
 
 ## [1.3.2](https://github.com/lark-org/lark-cli/compare/v1.3.1...v1.3.2) (2022-01-17)
 
-
 ### Bug Fixes
 
-* 解决创建项目时 模版渲染问题 ([83e88f2](https://github.com/lark-org/lark-cli/commit/83e88f261c1c78d2b3b8d071d82f6ac29acd19d3))
+- 解决创建项目时 模版渲染问题 ([83e88f2](https://github.com/lark-org/lark-cli/commit/83e88f261c1c78d2b3b8d071d82f6ac29acd19d3))
 
 ## [1.3.1](https://github.com/lark-org/lark-cli/compare/v1.3.0...v1.3.1) (2021-11-23)
 
