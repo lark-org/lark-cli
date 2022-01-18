@@ -1,3 +1,10 @@
+## [1.3.3](https://github.com/lark-org/lark-cli/compare/v1.3.2...v1.3.3) (2022-01-18)
+
+
+### Bug Fixes
+
+* 修改CI名称 ([1ccdb93](https://github.com/lark-org/lark-cli/commit/1ccdb937d0e368e9ccfc714e765c72a160297a22))
+
 ## [1.3.2](https://github.com/lark-org/lark-cli/compare/v1.3.1...v1.3.2) (2022-01-17)
 
 
