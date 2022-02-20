@@ -539,14 +539,6 @@ chalk@^2.0.0:
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
 
-chalk@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/chalk/-/chalk-3.0.0.tgz#3f73c2bf526591f574cc492c51e2456349f844e4"
-  integrity sha512-4D3B6Wf41KOYRFdszmDqMCGq5VV/uMAB273JILmO+3jAlh8X4qDtdtgCR3fxtbLEMzSx22QdhnDcJvu2u1fVwg==
-  dependencies:
-    ansi-styles "^4.1.0"
-    supports-color "^7.1.0"
-
 chalk@^4.0.0, chalk@^4.1.0, chalk@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.2.tgz#aac4e2b7734a740867aeb16bf02aad556a1e7a01"
@@ -1858,11 +1850,11 @@ merge2@^1.3.0:
   integrity sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==
 
 metalsmith@^2.3.0:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/metalsmith/-/metalsmith-2.4.1.tgz#e3f7689a5f59b1fe8647398847956de2f9818ef8"
-  integrity sha512-k8Q6mEJL21GmcmAb7PuawSff68/GcV2ctyFyZgoQgSc+2MrdCZxkZPqQY0EfZ6o4KqsBvdHvgNYUMzZQGTmxBQ==
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/metalsmith/-/metalsmith-2.4.2.tgz#69e2cdb64620791ec0cd7173c68608c83ff92f06"
+  integrity sha512-HS/MRADloJS3+O5V/+4f/khBkwtdYUQFWEGqeviLT/7wNgHWknMiIflV99JeYzj0hbw+L0aTb2spPlnWW4/Adg==
   dependencies:
-    chalk "^3.0.0"
+    chalk "^4.1.2"
     clone "^2.1.2"
     co-fs-extra "^1.2.1"
     commander "^6.2.1"
