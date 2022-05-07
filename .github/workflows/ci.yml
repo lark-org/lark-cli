@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
@@ -46,7 +46,7 @@ jobs:
     # Trigger release for only pushes to branches defined above
     if: ${{github.event_name == 'push'&& (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/beta' ) }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
