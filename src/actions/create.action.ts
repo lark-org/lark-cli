@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 /* eslint-disable promise/no-callback-in-promise */
 /* eslint-disable promise/catch-or-return */
 import { handlebars } from 'consolidate'
@@ -8,12 +7,24 @@ import * as ora from 'ora'
 import * as os from 'os'
 import * as path from 'path'
 import * as prompts from 'prompts'
+import { PromptObject } from 'prompts'
 import * as chalk from 'chalk'
 import * as Metalsmith from 'metalsmith'
-import { Input } from '../utils/command.input'
-import { installDependencies } from '../utils/dependencies'
-import { AbstractAction } from './abstract.action'
+import { join } from 'path'
 
+import { Input } from '../utils/command.input'
+import { AbstractAction } from './abstract.action'
+import { generateSelect } from '../utils/questions'
+import { MESSAGES } from '../ui/messages'
+import {
+  AbstractPackageManager,
+  PackageManager,
+  PackageManagerFactory
+} from '../utils/pkg-mannager'
+import { GitRunner } from '../utils/runners/git.runner'
+import { EMOJIS } from '../ui/emojis'
+
+type PromptsAnswers = Record<string, any>
 const templateRepoUrls = {
   默认: 'https://github.com/virgoone/project-template.git'
 }
@@ -35,6 +46,88 @@ const browserslist = {
 }
 
 export const exit = () => process.exit(1)
+
+const askForPackageManager = async (): Promise<PromptsAnswers> => {
+  const pkgs = [
+    PackageManager.NPM,
+    PackageManager.YARN,
+    PackageManager.PNPM
+  ].map((it: string) => ({ title: it, value: it }))
+  const questions: PromptObject[] = [
+    generateSelect('package-manager')(MESSAGES.PACKAGE_MANAGER_QUESTION)(pkgs)
+  ]
+  return prompts(questions)
+}
+
+const askForProjectPort = async (): Promise<PromptsAnswers> => {
+  const questions: PromptObject[] = [
+    generateSelect('project-port', 'number')(MESSAGES.PROJECT_PORT_QUESTION)(
+      [],
+      (input: string | number): boolean =>
+        typeof input === 'number' && input > 1000 && input < 65535
+    )
+  ]
+  return prompts(questions)
+}
+
+const selectPackageManager = async (): Promise<AbstractPackageManager> => {
+  const answers: PromptsAnswers = await askForPackageManager()
+  return PackageManagerFactory.create(answers['package-manager'])
+}
+
+const selectProjectPort = async (): Promise<number> => {
+  const answers = await askForProjectPort()
+  return answers['project-port'] as number
+}
+
+const installPackages = async (
+  options: Input[],
+  dryRunMode: boolean,
+  installDirectory: string
+) => {
+  const inputPackageManager: string = options.find(
+    (option) => option.name === 'package-manager'
+  )!.value as string
+
+  let packageManager: AbstractPackageManager
+  if (dryRunMode) {
+    console.info()
+    console.info(chalk.green(MESSAGES.DRY_RUN_MODE))
+    console.info()
+    return
+  }
+
+  if (inputPackageManager !== undefined) {
+    try {
+      packageManager = PackageManagerFactory.create(inputPackageManager)
+      await packageManager.install(installDirectory, inputPackageManager)
+    } catch (error) {
+      if (error && error.message) {
+        console.error(chalk.red(error.message))
+      }
+    }
+  } else {
+    packageManager = await selectPackageManager()
+    await packageManager.install(
+      installDirectory,
+      packageManager.name.toLowerCase()
+    )
+  }
+}
+
+const initializeGitRepository = async (dir: string) => {
+  const runner = new GitRunner()
+  await runner.run('init', true, join(process.cwd(), dir)).catch(() => {
+    console.error(chalk.red(MESSAGES.GIT_INITIALIZATION_ERROR))
+  })
+}
+
+const addGitCommand = async (dir: string) => {
+  const runner = new GitRunner()
+  await runner.run('add -A', true, join(process.cwd(), dir)).catch(() => {
+    console.error(chalk.red(MESSAGES.GIT_EXECUTION_ERROR))
+  })
+}
 
 export const removeDirectory = async (directoryPath: string) => {
   const name = path.basename(directoryPath)
@@ -126,21 +219,16 @@ const getTemplateInfo = async () => {
 
   return { templateUrl, platform, mobile }
 }
-const defaultTemplateInfo = {
-  templateUrl: templateRepoUrls.默认,
-  platform: platforms.Default,
-  mobile: false
-}
 
-const create = async (name: string, options: Input[]) => {
-  const dest = path.join(process.cwd(), name)
+const replaceProjectInLocal = async (projectName: string) => {
+  const dest = path.join(process.cwd(), projectName)
   if (fs.existsSync(dest) && (await fs.stat(dest)).isDirectory()) {
     // 文件名冲突时覆盖逻辑
     const forceCover: boolean = (
       await prompts({
         type: 'select',
         name: 'cover',
-        message: `文件 ${name} 已经存在，是否覆盖？`,
+        message: `文件 ${projectName} 已经存在，是否覆盖？`,
         choices: [
           {
             title: 'cover',
@@ -158,6 +246,16 @@ const create = async (name: string, options: Input[]) => {
     }
     await removeDirectory(dest)
   }
+}
+
+const defaultTemplateInfo = {
+  templateUrl: templateRepoUrls.默认,
+  platform: platforms.Default,
+  mobile: false
+}
+
+const create = async (projectName: string, options: Input[]) => {
+  const dest = path.join(process.cwd(), projectName)
   const shouldSkipInstall = options.some(
     (option) => option.name === 'skip-install' && option.value === true
   )
@@ -167,21 +265,15 @@ const create = async (name: string, options: Input[]) => {
   const quickStart = options.some(
     (option) => option.name === 'quick-start' && option.value === true
   )
+  await replaceProjectInLocal(projectName)
+
   const { templateUrl, platform, mobile } = quickStart
     ? defaultTemplateInfo
     : await getTemplateInfo()
 
-  const { port } = await prompts({
-    type: 'text',
-    name: 'port',
-    message: '输入端口号 (must be a number below 65535)',
-    validate: (prev) => {
-      const p = parseInt(prev, 10)
-      return p > 0 && p < 65535
-    }
-  })
-
+  const port = await selectProjectPort()
   const spinner = ora(`Generating project in ${chalk.yellow(dest)}`)
+
   spinner.start()
   let tempPath = ''
   try {
@@ -196,7 +288,7 @@ const create = async (name: string, options: Input[]) => {
 
   Metalsmith(__dirname)
     .metadata({
-      name,
+      name: projectName,
       author,
       email,
       port,
@@ -212,7 +304,7 @@ const create = async (name: string, options: Input[]) => {
 
       await Promise.all(
         keys.map((key) => {
-          console.log(chalk.green(`✔️写入 ${key}`))
+          console.log(chalk.green(`${EMOJIS.POINT_RIGHT} 写入 ${key}`))
           // 控制台应用不需要替换
           if (platform === platforms.Console) {
             return Promise.resolve()
@@ -242,7 +334,7 @@ const create = async (name: string, options: Input[]) => {
         // eslint-disable-next-line
         const pkg = require(pkgFile)
 
-        pkg.name = name
+        pkg.name = projectName
         pkg.browserslist = mobile ? browserslist.mobile : browserslist.pc
         if (pkg.scripts.start) {
           pkg.scripts.start = `lark-cli-service start -p ${port}`
@@ -252,31 +344,28 @@ const create = async (name: string, options: Input[]) => {
         spinner.stopAndPersist({ symbol: '✨ ' })
 
         if (!shouldSkipGit) {
-          await execa('git', ['init'], { cwd: dest })
+          await initializeGitRepository(projectName)
         }
 
         // 像husky这样的package需要在git init之后安装才有用
         if (!shouldSkipInstall) {
-          console.log(`📦  Installing dependencies...`)
           console.log()
-          await installDependencies(dest)
-          console.log('dependencies has been installed')
+          await installPackages(options, quickStart as boolean, projectName)
         }
 
         if (!shouldSkipGit) {
-          await execa('git', ['add', '-A'], { cwd: dest })
+          await addGitCommand(projectName)
         }
-
         console.log()
+        console.log(
+          chalk.yellow(`Thanks for installing Lark CLI ${EMOJIS.PRAY}`)
+        )
         console.log()
-        console.log(`Successfully created project ${chalk.yellow(name)}.`)
-        console.log(`Get started with the following commands:\n\n`)
-        console.info(chalk.cyan(` ${chalk.gray('$')} cd ${name}`))
-        console.info(chalk.cyan(` ${chalk.gray('$')} yarn start`))
         console.log()
       } catch (e) {
         console.warn(e)
         spinner.stop()
+        exit()
       }
     })
 }
@@ -291,6 +380,11 @@ export class CreateAction extends AbstractAction {
       console.log('please input a legal project name')
       return
     }
-    await create(getApplicationNameInput.value as string, options)
+    try {
+      await create(getApplicationNameInput.value as string, options)
+    } catch (error) {
+      console.error(error)
+      exit()
+    }
   }
 }

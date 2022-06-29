@@ -1,0 +1,6 @@
+export * from './pkg-manager.factory'
+export * from './abstract.pkg-manager'
+export * from './npm.pkg-manager'
+export * from './yarn.pkg-manager'
+export * from './pnpm.pkg-manager'
+export * from './pkg.manager-types'
