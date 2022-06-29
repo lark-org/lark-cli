@@ -1,3 +1,9 @@
+# [1.4.0](https://github.com/lark-org/lark-cli/compare/v1.3.4...v1.4.0) (2022-06-29)
+
+### Features
+
+- 增加包管理器和修改创建项目命令 ([aae8e77](https://github.com/lark-org/lark-cli/commit/aae8e776179dfe25574fadb91ff0feb25a509ecd))
+
 ## [1.3.4](https://github.com/lark-org/lark-cli/compare/v1.3.3...v1.3.4) (2022-01-18)
 
 ### Bug Fixes
