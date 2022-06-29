@@ -10,7 +10,7 @@ specifiers:
   commander: ^8.3.0
   consolidate: ^0.16.0
   eslint: ^7.32.0
-  eslint-config-lark: ^0.3.0
+  eslint-config-lark: ^0.4.0
   execa: 5.1.1
   fs-extra: ^10.0.0
   handlebars: ^4.7.7
@@ -44,7 +44,7 @@ devDependencies:
   '@types/ora': 3.2.0
   '@types/prompts': 2.0.14
   eslint: 7.32.0
-  eslint-config-lark: 0.3.0_0a8589492f1148998351943d60228c57
+  eslint-config-lark: 0.4.0_0a8589492f1148998351943d60228c57
   husky: 7.0.4
   lint-staged: 12.5.0
   prettier: 2.7.1
@@ -331,22 +331,6 @@ packages:
       typescript: 4.7.4
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /@typescript-eslint/experimental-utils/5.30.0_eslint@7.32.0+typescript@4.7.4:
-    resolution:
-      {
-        integrity: sha512-k+EM/r2hxSMX+S+ji9qQVyVMeJ8IEunadngM+1rEDLdUbqQlYoUv78HWCKoOHJao+KSyLbhYHFhh7h54+rB63A==
-      }
-    engines: { node: ^12.22.0 || ^14.17.0 || >=16.0.0 }
-    peerDependencies:
-      eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
-    dependencies:
-      '@typescript-eslint/utils': 5.30.0_eslint@7.32.0+typescript@4.7.4
-      eslint: 7.32.0
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
     dev: true
 
   /@typescript-eslint/parser/5.30.0_eslint@7.32.0+typescript@4.7.4:
@@ -1204,10 +1188,10 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /eslint-config-lark/0.3.0_0a8589492f1148998351943d60228c57:
+  /eslint-config-lark/0.4.0_0a8589492f1148998351943d60228c57:
     resolution:
       {
-        integrity: sha512-/reiK8Zot6VMjllJvDX5WjQmeMslC8xZ6zowJx4mJ4wdzP6VcRqEgBkXwBPnmKN77dyQfU6mcZ9rxBSYnvXvjw==
+        integrity: sha512-SFZ1E7/znLzTcPRIohxW9Q+aDLajP4g49XTw5jIR4twZyVTBgME/3gCJSw24hCaVIFF3idMOi0qdVIeqMgHbFg==
       }
     peerDependencies:
       eslint: ^7.2.0 || ^8.1.0
@@ -1222,7 +1206,7 @@ packages:
       eslint-import-resolver-typescript: 2.7.1_3bd94fa9be989baab6ef2e6b5dec3766
       eslint-plugin-compat: 4.0.2_eslint@7.32.0
       eslint-plugin-import: 2.26.0_eslint@7.32.0
-      eslint-plugin-jest: 25.7.0_a80a01072c8b097b48879e86ec733e6d
+      eslint-plugin-jest: 26.5.3_a80a01072c8b097b48879e86ec733e6d
       eslint-plugin-jest-dom: 4.0.2_eslint@7.32.0
       eslint-plugin-prettier: 4.1.0_f9a5537566b3ca3b5b68fc99385c0ca6
       eslint-plugin-promise: 6.0.0_eslint@7.32.0
@@ -1351,14 +1335,14 @@ packages:
       requireindex: 1.2.0
     dev: true
 
-  /eslint-plugin-jest/25.7.0_a80a01072c8b097b48879e86ec733e6d:
+  /eslint-plugin-jest/26.5.3_a80a01072c8b097b48879e86ec733e6d:
     resolution:
       {
-        integrity: sha512-PWLUEXeeF7C9QGKqvdSbzLOiLTx+bno7/HC9eefePfEb257QFHg7ye3dh80AZVkaa/RQsBB1Q/ORQvg2X7F0NQ==
+        integrity: sha512-sICclUqJQnR1bFRZGLN2jnSVsYOsmPYYnroGCIMVSvTS3y8XR3yjzy1EcTQmk6typ5pRgyIWzbjqxK6cZHEZuQ==
       }
-    engines: { node: ^12.13.0 || ^14.15.0 || >=16.0.0 }
+    engines: { node: ^12.22.0 || ^14.17.0 || >=16.0.0 }
     peerDependencies:
-      '@typescript-eslint/eslint-plugin': ^4.0.0 || ^5.0.0
+      '@typescript-eslint/eslint-plugin': ^5.0.0
       eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
       jest: '*'
     peerDependenciesMeta:
@@ -1368,7 +1352,7 @@ packages:
         optional: true
     dependencies:
       '@typescript-eslint/eslint-plugin': 5.30.0_29006597364a32ccbe0ed961d4d2e925
-      '@typescript-eslint/experimental-utils': 5.30.0_eslint@7.32.0+typescript@4.7.4
+      '@typescript-eslint/utils': 5.30.0_eslint@7.32.0+typescript@4.7.4
       eslint: 7.32.0
     transitivePeerDependencies:
       - supports-color
