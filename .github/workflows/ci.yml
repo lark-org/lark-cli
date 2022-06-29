@@ -51,8 +51,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: yarn install --frozen-lockfile
-      - run: yarn build
+      - run: pnpm i
+      - run: pnpm run build
       # Release using semantic-release.
       # While this runs on all branches, it will only release latest from master
       - uses: docker://ghcr.io/virgoone/semantic-release-action:latest

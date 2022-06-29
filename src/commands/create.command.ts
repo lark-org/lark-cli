@@ -14,6 +14,10 @@ export class CreateCommand extends AbstractCommand {
       .option('-c, --console', 'Use console manager project template.')
       .option('-ig, --skip-git', 'Skip git repository initialization.')
       .option('-ii, --skip-install', 'Skip package installation.')
+      .option(
+        '-p, --package-manager [package-manager]',
+        'Specify package manager.'
+      )
       .action(async (name: string, opts: any) => {
         if (!name) {
           throw new Error('Please specify the project name.')
@@ -33,6 +37,10 @@ export class CreateCommand extends AbstractCommand {
         options.push({ name: 'skip-git', value: !!opts.skipGit })
         options.push({ name: 'skip-install', value: !!opts.skipInstall })
         options.push({ name: 'quick-start', value: !!opts.quickStart })
+        options.push({
+          name: 'package-manager',
+          value: opts.packageManager
+        })
         options.push({
           name: 'template',
           value: template
