@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import './utils/alias'
 import { Command } from 'commander'
 import { CommandLoader } from './commands'
 
