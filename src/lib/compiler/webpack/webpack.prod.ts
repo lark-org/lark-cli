@@ -5,8 +5,8 @@ import path from 'path'
 import TerserPlugin from 'terser-webpack-plugin'
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
 import WorkboxWebpackPlugin from 'workbox-webpack-plugin'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 import paths from '../variables/paths'
 import configFactory from './webpack.common'
 import { processWebpackConfig } from '../variables/custom-config'
@@ -27,7 +27,8 @@ export default () =>
             chunkFilename: 'static/css/[name].[contenthash:8].chunk.css',
             attributes: {
               onerror: '__STYLE_LOAD_ERROR__(event)'
-            }
+            },
+            ignoreOrder: true // Enable to remove warnings about conflicting order
           }),
           new StyleExtHtmlWebpackPlugin(HtmlWebpackPlugin, {
             custom: [
@@ -38,7 +39,6 @@ export default () =>
               }
             ]
           })
-          // This is only used in production mode
         ]
       }),
       {
@@ -158,7 +158,7 @@ export default () =>
               // See https://github.com/cra-template/pwa/issues/13#issuecomment-722667270
               maximumFileSizeToCacheInBytes: 5 * 1024 * 1024
             })
-        ]
+        ].filter(Boolean)
       } as webpack.Configuration
     )
   )

@@ -1,4 +1,4 @@
-import * as chalk from 'chalk'
+import chalk from 'chalk'
 import { Runner } from './runner'
 import { NpmRunner } from './npm.runner'
 import { PnpmRunner } from './pnpm.runner'
