@@ -2,17 +2,18 @@ import webpack from 'webpack'
 import chalk from 'chalk'
 import fs from 'fs-extra'
 import path from 'path'
+import ora from 'ora'
 
 import paths from '@/lib/compiler/variables/paths'
 import variables from '@/lib/compiler/variables'
 import configFactory from '@/lib/compiler/webpack/webpack.prod'
+import printHostingInstructions from '@/lib/compiler/dev-utils/printHostingInstructions'
 
 import FileSizeReporter, {
   OpaqueFileSizes
 } from 'react-dev-utils/FileSizeReporter'
 import printBuildError from 'react-dev-utils/printBuildError'
 import formatWebpackMessages from 'react-dev-utils/formatWebpackMessages'
-import printHostingInstructions from 'react-dev-utils/printHostingInstructions'
 
 import { checkBrowsers } from 'react-dev-utils/browsersHelper'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
@@ -71,14 +72,25 @@ function promisifyWebpackCompile(
   console.log()
 
   const compiler = webpack(config)
+  const spinner = ora({
+    spinner: {
+      interval: 120,
+      frames: ['▹▹▹▹▹', '▸▹▹▹▹', '▹▸▹▹▹', '▹▹▸▹▹', '▹▹▹▸▹', '▹▹▹▹▸']
+    },
+    text: `Compiling ${chalk.cyan(`${variables.APP_NAME}`)}`
+  })
+  spinner.start()
   return new Promise((resolve, reject) => {
-    console.log(`$Compiling...`)
+    console.log()
     console.time(`Compiled End`)
 
     compiler.run((err, stats) => {
       let messages = null
 
       console.timeEnd(`Compiled End`)
+      console.log()
+      spinner.stopAndPersist({ symbol: '✨ ', text: '' })
+      console.log()
 
       if (err) {
         if (!err.message) {
@@ -120,7 +132,7 @@ function promisifyWebpackCompile(
         messages?.warnings.length
       ) {
         // Ignore sourcemap warnings in CI builds. See #8227 for more info.
-        const filteredWarnings = messages.warnings.filter(
+        const filteredWarnings = messages?.warnings?.filter(
           (w) => !/Failed to parse source map/.test(w)
         )
         if (filteredWarnings.length) {

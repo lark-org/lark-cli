@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { Command } from 'commander'
-import * as chalk from 'chalk'
+import chalk from 'chalk'
 import { BuildAction } from '@/actions/build.action'
 import { StartAction } from '@/actions/start.action'
 import { CreateCommand } from './create.command'

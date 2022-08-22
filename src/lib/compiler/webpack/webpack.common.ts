@@ -6,13 +6,14 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ModuleNotFoundPlugin from 'react-dev-utils/ModuleNotFoundPlugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { WebpackManifestPlugin } from 'webpack-manifest-plugin'
+import { FileDescriptor } from 'webpack-manifest-plugin/dist/helpers'
 import ForkTsCheckerWarningWebpackPlugin from 'react-dev-utils/ForkTsCheckerWarningWebpackPlugin'
 import ForkTsCheckerWebpack from 'react-dev-utils/ForkTsCheckerWebpackPlugin'
+import InterpolateHtmlPlugin from 'react-dev-utils/InterpolateHtmlPlugin'
 
 import variables from '@/lib/compiler/variables'
 import paths from '@/lib/compiler/variables/paths'
 import builds from '@/lib/compiler/variables/builds'
-import InterpolateHtmlPlugin from '@/lib/compiler/webpack-plugins/interpolate-html-plugin'
 import createEnvironmentHash from '@/lib/compiler/dev-utils/createEnvironmentHash'
 
 import modules from '../dev-utils/modules'
@@ -423,11 +424,15 @@ const webpackConfig = ({
       }),
       new ModuleNotFoundPlugin(paths.appPath),
       new webpack.DefinePlugin(stringified),
-      new InterpolateHtmlPlugin(HtmlWebpackPlugin, variables),
+      new InterpolateHtmlPlugin(HtmlWebpackPlugin as any, variables),
       new WebpackManifestPlugin({
         fileName: 'asset-manifest.json',
         publicPath: paths.publicUrlOrPath,
-        generate: (seed, files, entrypoints) => {
+        generate: (
+          seed: Record<any, any>,
+          files: FileDescriptor[],
+          entrypoints: Record<string, string[]>
+        ) => {
           const manifestFiles = files.reduce(
             (manifest: Record<string, any>, file) => {
               // eslint-disable-next-line no-param-reassign
@@ -436,7 +441,7 @@ const webpackConfig = ({
             },
             seed
           )
-          const entrypointFiles = entrypoints.main.filter(
+          const entrypointFiles = entrypoints.app?.filter(
             (fileName) => !fileName.endsWith('.map')
           )
 

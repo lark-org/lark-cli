@@ -1,4 +1,4 @@
-import * as chalk from 'chalk'
+import chalk from 'chalk'
 import { EMOJIS } from './emojis'
 
 const PROJECT_INSTALL_MESSAGE = {
