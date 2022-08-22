@@ -21,5 +21,7 @@ export const MESSAGES = {
   DRY_RUN_MODE: 'Command has been executed in dry run mode, nothing changed!',
   GIT_INITIALIZATION_ERROR: 'Git 初始化失败！',
   GIT_EXECUTION_ERROR: 'Git 执行失败！',
-  PROJECT_PORT_QUESTION: '请输入端口号(must be a number below 65535)'
+  PROJECT_PORT_QUESTION: '请输入端口号(must be a number below 65535)',
+  GIT_VERIFY_STATUS_ERROR: '本地存在未提交文件，请先提交或者还原工作区！',
+  HTTPS_INITIALIZATION_ERROR: 'MKCert 初始化失败！'
 }

@@ -1,11 +1,12 @@
 /* eslint-disable no-restricted-syntax */
-import * as chalk from 'chalk'
+import chalk from 'chalk'
 import { readFile } from 'fs'
-import * as ora from 'ora'
+import ora from 'ora'
 import { join } from 'path'
+import { normalizeToKebabOrSnakeCase } from '@/utils/formatting'
+
 import { AbstractRunner } from '../runners/abstract.runner'
 import { PackageManagerCommands, ProjectDependency } from './pkg.manager-types'
-import { normalizeToKebabOrSnakeCase } from '../formatting'
 import { MESSAGES } from '../../ui/messages'
 
 export abstract class AbstractPackageManager {
