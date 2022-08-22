@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import * as chalk from 'chalk'
+import chalk from 'chalk'
 import { ChildProcess, spawn, SpawnOptions } from 'child_process'
 
 const RUNNER_EXECUTION_ERROR = (command: string) =>
