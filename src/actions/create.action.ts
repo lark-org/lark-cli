@@ -1,27 +1,26 @@
 /* eslint-disable promise/no-callback-in-promise */
 /* eslint-disable promise/catch-or-return */
 import { handlebars } from 'consolidate'
-import * as execa from 'execa'
-import * as fs from 'fs-extra'
-import * as ora from 'ora'
-import * as os from 'os'
-import * as path from 'path'
-import * as prompts from 'prompts'
-import { PromptObject } from 'prompts'
-import * as chalk from 'chalk'
-import * as Metalsmith from 'metalsmith'
-import { join } from 'path'
+import execa from 'execa'
+import fs from 'fs-extra'
+import ora from 'ora'
+import os from 'os'
+import path, { join } from 'path'
+import prompts, { PromptObject } from 'prompts'
+import chalk from 'chalk'
+import Metalsmith from 'metalsmith'
 
-import { Input } from '../utils/command.input'
-import { AbstractAction } from './abstract.action'
-import { generateSelect } from '../utils/questions'
-import { MESSAGES } from '../ui/messages'
 import {
   AbstractPackageManager,
   PackageManager,
   PackageManagerFactory
-} from '../utils/pkg-mannager'
-import { GitRunner } from '../utils/runners/git.runner'
+} from '@/lib/pkg-mannager'
+import { GitRunner } from '@/lib/runners/git.runner'
+import { Input } from '../utils/command.input'
+import { AbstractAction } from './abstract.action'
+import { generateSelect } from '../utils/questions'
+import { MESSAGES } from '../ui/messages'
+
 import { EMOJIS } from '../ui/emojis'
 
 type PromptsAnswers = Record<string, any>

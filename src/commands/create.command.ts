@@ -7,6 +7,7 @@ export class CreateCommand extends AbstractCommand {
   public load(program: Command): void {
     program
       .command('create <name>')
+      .alias('c')
       .description('Create react application.')
       .option('-q, --quick-start', 'Create quickstart react app.')
       .option('-d, --default', 'Use default project template.')
