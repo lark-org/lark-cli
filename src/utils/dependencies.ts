@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
-import * as chalk from 'chalk'
-import * as execa from 'execa'
-import * as readline from 'readline'
+import chalk from 'chalk'
+import execa from 'execa'
+import readline from 'readline'
 
 function toStartOfLine(stream: NodeJS.WriteStream) {
   if (!chalk.supportsColor) {

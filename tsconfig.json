@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "rootDir": "./src",
-    "outDir": "./lib",
+    "outDir": "dist",
     "lib": ["es2017"],
     "module": "commonjs",
     "target": "es6",
@@ -9,7 +9,12 @@
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "removeComments": true,
-    "sourceMap": false
+    "sourceMap": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": false,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "exclude": ["node_modules", "lib"]
 }
