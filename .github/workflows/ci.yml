@@ -4,7 +4,9 @@ on:
   push:
     branches:
       - master
+      - next
       - beta
+      - alpha
     tags-ignore:
       - '**'
   pull_request:
@@ -17,27 +19,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - uses: actions/cache@v3.0.8
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      - run: yarn install --frozen-lockfile
-      # - run: echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" >> ~/.npmrc
-      - name: 执行 Lint
-        run: yarn lint
+      steps:
+        - uses: actions/checkout@v3
+        - uses: pnpm/action-setup@v2
+          with:
+            version: 6.32.9
+        - uses: actions/setup-node@v3
+          with:
+            node-version: '16'
+            cache: 'pnpm'
+        - name: 安装依赖
+          run: pnpm install --frozen-lockfile
+        - name: 执行 Lint
+          run: pnpm run lint
   release:
     name: Release
     runs-on: ubuntu-latest
@@ -47,17 +41,30 @@ jobs:
     if: ${{github.event_name == 'push'&& (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/beta' ) }}
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js
-        uses: actions/setup-node@v3
+      - uses: pnpm/action-setup@v2
         with:
-          node-version: 16
-      - run: npm install -g pnpm
-      - run: pnpm i --no-frozen-lockfile
-      - run: pnpm run build
+          version: 6.32.9
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'pnpm'
       # Release using semantic-release.
       # While this runs on all branches, it will only release latest from master
       - uses: docker://ghcr.io/virgoone/semantic-release-action:latest
         with:
+          branches: |
+            [
+              'master',
+              'next',
+              {
+                name: 'beta',
+                prerelease: true
+              },
+              {
+                name: 'alpha',
+                prerelease: true
+              }
+            ]
           tag_format: 'v${version}'
           extends: '@semantic-release/apm-config'
           plugins: |
