@@ -19,19 +19,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      steps:
-        - uses: actions/checkout@v3
-        - uses: pnpm/action-setup@v2
-          with:
-            version: 6.32.9
-        - uses: actions/setup-node@v3
-          with:
-            node-version: '16'
-            cache: 'pnpm'
-        - name: 安装依赖
-          run: pnpm install --frozen-lockfile
-        - name: 执行 Lint
-          run: pnpm run lint
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 6.32.9
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'pnpm'
+      - name: 安装依赖
+        run: pnpm install --frozen-lockfile
+      - name: 执行 Lint
+        run: pnpm run lint
   release:
     name: Release
     runs-on: ubuntu-latest
