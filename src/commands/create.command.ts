@@ -1,5 +1,5 @@
 import { Command } from 'commander'
-import * as chalk from 'chalk'
+import chalk from 'chalk'
 import { Input } from '../utils/command.input'
 import { AbstractCommand } from './abstract.command'
 
