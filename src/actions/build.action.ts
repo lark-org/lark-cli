@@ -13,18 +13,6 @@ const git = SimpleGit()
 export class BuildAction extends AbstractAction {
   public async handle(inputs: Input[], options: Input[]) {
     try {
-      const NODE_ENV = options.find(
-        (option) => option.name === 'node-env'
-      )?.value
-      const APP_ENV = options.find((option) => option.name === 'app-env')?.value
-
-      process.env.APP_ENV =
-        (APP_ENV as string) || process.env.APP_ENV || 'production'
-      process.env.NODE_ENV =
-        (NODE_ENV as string) || process.env.NODE_ENV || 'production'
-      process.env.BABEL_ENV = process.env.BABEL_ENV || 'production'
-      process.env.CI = 'false'
-
       const skipVerify = options.find(
         (option) => option.name === 'skip-verify'
       )?.value
