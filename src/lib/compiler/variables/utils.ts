@@ -35,7 +35,10 @@ const getProjectFilePath = (relativePath: string) =>
   path.resolve(process.cwd(), relativePath)
 
 const getWorkspacePath = (relativePath: string) =>
-  path.resolve(process.env.HOME, relativePath)
+  path.resolve(
+    process.env[process.platform === 'win32' ? 'USERPROFILE' : 'HOME'],
+    relativePath
+  )
 
 const resolveApp = (relativePath: string) =>
   path.resolve(appDirectory, relativePath)

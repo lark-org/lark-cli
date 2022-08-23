@@ -28,10 +28,11 @@ const packageManager = appPackageJson
   ? require(appPackageJson).packageManager?.split('@')?.[0] || 'npm'
   : 'npm'
 
-const appHttpsConfig = getWorkspacePath('./.hb-mf')
+const appHttpsConfig = getWorkspacePath('./.lark')
 
-const appHttpsKey = getWorkspacePath('./.lark/localhost-key.pem')
-const appHttpsCert = getWorkspacePath('./.lark/localhost.pem')
+const appHttpsKey = getWorkspacePath('./.lark/key.pem')
+const appHttpsCert = getWorkspacePath('./.lark/cert.pem')
+
 export const paths = {
   appPath,
   appIndex,
