@@ -25,6 +25,11 @@ export class StartCommand extends AbstractCommand {
         'Specify APP_ENV environment variables',
         'development'
       )
+      .option(
+        '--node-env [node-env]',
+        'Specify NODE_ENV environment variables',
+        'development'
+      )
       .option('--https', 'Whether to enable https', false)
       .option('--ssl-cert <cert>', 'provide an ssl certificate')
       .option('--ssl-key <key>', 'provide an ssl key')
@@ -36,20 +41,11 @@ export class StartCommand extends AbstractCommand {
         options.push({ name: 'port', value: command.port })
         options.push({ name: 'https', value: command.https })
         options.push({ name: 'app-env', value: command.appEnv })
+        options.push({ name: 'node-env', value: command.nodeEnv })
 
         options.push({ name: 'ssl-cert', value: command.sslCert })
         options.push({ name: 'ssl-key', value: command.sslKey })
 
-        const APP_ENV = command.appEnv
-
-        process.env.NODE_ENV = process.env.NODE_ENV || 'development'
-        process.env.BABEL_ENV = process.env.BABEL_ENV || 'development'
-        process.env.APP_ENV =
-          (APP_ENV as string) || process.env.APP_ENV || 'development'
-
-        // eslint-disable-next-line no-underscore-dangle
-        variables.__DEV__ = process.env.NODE_ENV === 'development'
-        variables.APP_ENV = process.env.APP_ENV
         try {
           await this.action.handle([], options, [])
         } catch (err) {
