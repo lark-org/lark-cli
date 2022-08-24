@@ -36,20 +36,10 @@ const useTailwind = fs.existsSync(
   path.join(paths.appPath, 'tailwind.config.js')
 )
 
-const { __DEV__, PUBLIC_PATH: publicPath, APP_ENV } = variables
+const { __DEV__, PUBLIC_PATH: publicPath } = variables
 const { transpiler, transpilerOptions } = builds
 const { appIndex, appSrc, appHtml, appPolyfill } = paths
 
-const stringified = Object.keys(variables).reduce(
-  (acc: Record<string, any>, key) => {
-    acc[key] = JSON.stringify(variables[key])
-
-    return acc
-  },
-  {
-    'process.env.APP_ENV': JSON.stringify(APP_ENV)
-  }
-)
 const tsconfigRaw = [paths.appTsConfig, paths.appJsConfig].filter((f) =>
   fs.existsSync(f)
 )
@@ -182,6 +172,16 @@ const webpackConfig = ({
   entry = [],
   plugins = []
 }: WebpackCommonConfig): webpack.Configuration => {
+  const stringified = Object.keys(variables).reduce(
+    (acc: Record<string, any>, key) => {
+      acc[key] = JSON.stringify(variables[key])
+
+      return acc
+    },
+    {
+      'process.env.APP_ENV': JSON.stringify(variables.APP_ENV)
+    }
+  )
   let minify
 
   if (!__DEV__) {
