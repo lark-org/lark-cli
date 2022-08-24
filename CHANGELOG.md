@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/lark-org/lark-cli/compare/v1.5.0...v1.5.1) (2022-08-24)
+
+
+### Bug Fixes
+
+* 解决环境变量引入和运行时不一致问题 ([d81c24d](https://github.com/lark-org/lark-cli/commit/d81c24d21c10530969f813fba5d0b6087555d4bb))
+
 # [1.5.0](https://github.com/lark-org/lark-cli/compare/v1.4.0...v1.5.0) (2022-08-24)
 
 
