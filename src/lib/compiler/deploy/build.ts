@@ -66,7 +66,7 @@ function promisifyWebpackCompile(
   previousFileSizes: OpaqueFileSizes,
   writeStatsJson: boolean
 ): Promise<BuildResult> {
-  console.log(`${chalk.green('Environment:')} ${process.env.APP_ENV}`)
+  console.log(`${chalk.green('Environment:')} ${variables.APP_ENV}`)
   console.log()
   console.log('Creating an optimized production build...')
   console.log()
