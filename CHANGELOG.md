@@ -1,3 +1,20 @@
+# [1.5.0](https://github.com/lark-org/lark-cli/compare/v1.4.0...v1.5.0) (2022-08-24)
+
+
+### Bug Fixes
+
+* ci config ([ae28175](https://github.com/lark-org/lark-cli/commit/ae281753b19fba167b3b5823f94955405cc52460))
+* module alias ([42e430b](https://github.com/lark-org/lark-cli/commit/42e430b3d1a4bdc1b2ea44c2810edcd1327648e0))
+* 修改ci trigger ([771edd7](https://github.com/lark-org/lark-cli/commit/771edd7a400c3dfc6100341f72038a7cdd32bc1c))
+
+
+### Features
+
+* 升级CLI，增加start和build命令支持构建React项目 ([03f88ad](https://github.com/lark-org/lark-cli/commit/03f88ad48a54675b8b38cd981bc0c973a91cf856))
+* 完善start命令和修复https配置问题 ([10b3814](https://github.com/lark-org/lark-cli/commit/10b38147fea12e1632639d6a3b4874c2d1e66843))
+* 完成build重构 ([636d5ab](https://github.com/lark-org/lark-cli/commit/636d5ab2cca5a7001c6e4cd92fa6f2476d95f389))
+* 更新CI Config ([8ee28de](https://github.com/lark-org/lark-cli/commit/8ee28dec99c14f806bcb04d5c78cfb956a9f4915))
+
 # [1.4.0](https://github.com/lark-org/lark-cli/compare/v1.3.4...v1.4.0) (2022-06-29)
 
 ### Features
