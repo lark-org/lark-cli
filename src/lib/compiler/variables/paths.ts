@@ -30,8 +30,10 @@ const packageManager = appPackageJson
 
 const appHttpsConfig = getWorkspacePath('./.lark')
 
-const appHttpsKey = getWorkspacePath('./.lark/key.pem')
-const appHttpsCert = getWorkspacePath('./.lark/cert.pem')
+const appHttpsKey = (host: string) =>
+  getWorkspacePath(`./.lark/${host}-key.pem`)
+const appHttpsCert = (host: string) =>
+  getWorkspacePath(`./.lark/${host}-cert.pem`)
 
 export const paths = {
   appPath,
