@@ -15,7 +15,7 @@ process.on('uncaughtException', (err) => {
 })
 
 process.on('warning', (warning) => {
-  console.log(`warning>`, warning.stack)
+  console.warn(`warning>`, warning.stack)
 })
 
 const bootstrap = (): void => {
