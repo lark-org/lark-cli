@@ -54,12 +54,17 @@ export class StartAction extends AbstractAction {
 
       TerminalLog.splice(0, TerminalLog.length)
 
+      await checkBrowsers(appPath, isInteractive)
+
+      const DEFAULT_PORT = defaultPort ? Number(`${defaultPort}`) : 3000
+      const HOST = (host || process.env.HOST || '0.0.0.0') as string
+
       if (!!https && !sslCert && !sslCert) {
-        isHttpsEnable = await askForHttpsReady(host as string)
+        isHttpsEnable = await askForHttpsReady(HOST)
 
         if (isHttpsEnable) {
-          keyFile = fs.readFileSync(join(paths.appHttpsKey))
-          certFile = fs.readFileSync(join(paths.appHttpsCert))
+          keyFile = fs.readFileSync(join(paths.appHttpsKey(HOST)))
+          certFile = fs.readFileSync(join(paths.appHttpsCert(HOST)))
         }
       } else if (!!https && sslCert && sslKey) {
         keyFile = fs.readFileSync(join(sslKey as string))
@@ -76,10 +81,6 @@ export class StartAction extends AbstractAction {
             cert: certFile
           }
         : {}
-      await checkBrowsers(appPath, isInteractive)
-
-      const DEFAULT_PORT = defaultPort ? Number(`${defaultPort}`) : 3000
-      const HOST = (host || process.env.HOST || '0.0.0.0') as string
 
       if (host || process.env.HOST) {
         console.log(
@@ -188,7 +189,8 @@ const askForHttpsReady = async (host: string): Promise<boolean> => {
     fs.mkdirSync(paths.appHttpsConfig)
   }
   const isHttpsConfigReady =
-    fs.existsSync(paths.appHttpsKey) && fs.existsSync(paths.appHttpsCert)
+    fs.existsSync(paths.appHttpsKey(host)) &&
+    fs.existsSync(paths.appHttpsCert(host))
 
   if (isHttpsConfigReady) {
     return true
@@ -199,7 +201,7 @@ const askForHttpsReady = async (host: string): Promise<boolean> => {
   try {
     await runner
       .run(
-        `-key-file key.pem -cert-file cert.pem ${host} `,
+        `-key-file ${host}-key.pem -cert-file ${host}-cert.pem ${host} `,
         true,
         paths.appHttpsConfig
       )
