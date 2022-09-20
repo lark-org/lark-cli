@@ -14,10 +14,6 @@ process.on('uncaughtException', (err) => {
   throw err
 })
 
-process.on('warning', (warning) => {
-  console.warn(`warning>`, warning.stack)
-})
-
 const bootstrap = (): void => {
   const program = new Command()
 
