@@ -10,6 +10,20 @@ export function getConfigInfo(): Record<string, any> {
     : {}
 }
 
-export function setConfigInfo(configInfo: string, callback: () => void) {
+export function setConfigInfo(
+  configInfo: string,
+  callback: (err: Error) => void
+) {
   fs.writeFile(configFile, ini.encode(configInfo), callback)
+}
+
+export function getPrintTableData(data: Record<string, string>) {
+  const tableData = Object.keys(data).map((name, index) => {
+    const value = data[name]
+    return {
+      name,
+      value
+    }
+  })
+  return tableData
 }
