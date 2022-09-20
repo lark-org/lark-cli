@@ -1,6 +1,6 @@
 {
   "name": "@lark-org/lark-cli",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "快速创建 React 项目",
   "main": "dist/index.js",
   "author": "me@virgo.one",
