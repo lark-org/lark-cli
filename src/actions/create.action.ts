@@ -1,6 +1,6 @@
 /* eslint-disable promise/no-callback-in-promise */
 /* eslint-disable promise/catch-or-return */
-import { handlebars } from 'consolidate'
+import consolidate from 'consolidate'
 import execa from 'execa'
 import fs from 'fs-extra'
 import ora from 'ora'
@@ -311,9 +311,11 @@ const create = async (projectName: string, options: Input[]) => {
           const str = files[key].contents.toString()
           return new Promise((resolve, reject) => {
             // eslint-disable-next-line consistent-return
-            handlebars.render(str, metadata, (err, res) => {
+            consolidate.ejs.render(str, metadata, (err: Error, res: string) => {
               if (err) {
                 console.error(`${key} 模板渲染失败}`, err)
+                spinner.stop()
+                exit()
                 reject(err)
               }
               // eslint-disable-next-line no-param-reassign
