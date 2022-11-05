@@ -175,8 +175,8 @@ const getDevConfig = async () => {
   const config: webpack.Configuration = configFactory()
 
   if (MFSU_ENABLED) {
-    // @ts-ignore
     await mfsu.setWebpackConfig({
+      // @ts-ignore
       config
     })
   }
