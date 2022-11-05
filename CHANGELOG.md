@@ -1,130 +1,123 @@
-## [1.7.1](https://github.com/lark-org/lark-cli/compare/v1.7.0...v1.7.1) (2022-11-05)
-
+## [1.7.2](https://github.com/lark-org/lark-cli/compare/v1.7.1...v1.7.2) (2022-11-05)
 
 ### Bug Fixes
 
-* **project:** 解决因为构建类型问题导致的build失败问题 ([50c8b87](https://github.com/lark-org/lark-cli/commit/50c8b874274300aaf8eec9e5f01ec7d175b74180))
+- **project:** 构建入口缺失问题 ([ada3fce](https://github.com/lark-org/lark-cli/commit/ada3fce27201c76c790a413fcf1c93ce67477544))
+- 解决 pre-commit 问题 ([0f9a5c6](https://github.com/lark-org/lark-cli/commit/0f9a5c644e4f4db415b512b0fea1b87b946b493c))
+
+## [1.7.1](https://github.com/lark-org/lark-cli/compare/v1.7.0...v1.7.1) (2022-11-05)
+
+### Bug Fixes
+
+- **project:** 解决因为构建类型问题导致的 build 失败问题 ([50c8b87](https://github.com/lark-org/lark-cli/commit/50c8b874274300aaf8eec9e5f01ec7d175b74180))
 
 # [1.7.0](https://github.com/lark-org/lark-cli/compare/v1.6.0...v1.7.0) (2022-11-05)
 
-
 ### Features
 
-* **handlebar:** 更换渲染模版引擎为ejs，防止react语法导致渲染失败 ([e9d0a97](https://github.com/lark-org/lark-cli/commit/e9d0a979dac82ea4738f866e06cc90595fda5e44))
+- **handlebar:** 更换渲染模版引擎为 ejs，防止 react 语法导致渲染失败 ([e9d0a97](https://github.com/lark-org/lark-cli/commit/e9d0a979dac82ea4738f866e06cc90595fda5e44))
 
 # [1.5.0](https://github.com/lark-org/lark-cli/compare/v1.4.0...v1.5.0) (2022-09-20)
 
-
 ### Bug Fixes
 
-* ci config ([8a8149d](https://github.com/lark-org/lark-cli/commit/8a8149d4d6a62dab9043313282dca8973d8d56c9))
-* module alias ([48f26c0](https://github.com/lark-org/lark-cli/commit/48f26c028197862553897575503318272db48414))
-* 修改ci trigger ([60494d0](https://github.com/lark-org/lark-cli/commit/60494d0f401349baba89273c401d0287920e6734))
-* 修改warning时输出日志格式 ([be82135](https://github.com/lark-org/lark-cli/commit/be8213516d643a82bc1cd19330f37eba1b0ab1a6))
-* 解决本地开发时启用https证书和host不绑定问题 ([fe057d5](https://github.com/lark-org/lark-cli/commit/fe057d56eaede698f5c629717c7dbfe9c6a427b4))
-* 解决环境变量引入和运行时不一致问题 ([9040af8](https://github.com/lark-org/lark-cli/commit/9040af8612e0d9036b7adbc174dbc7744495eb9b))
-
+- ci config ([8a8149d](https://github.com/lark-org/lark-cli/commit/8a8149d4d6a62dab9043313282dca8973d8d56c9))
+- module alias ([48f26c0](https://github.com/lark-org/lark-cli/commit/48f26c028197862553897575503318272db48414))
+- 修改 ci trigger ([60494d0](https://github.com/lark-org/lark-cli/commit/60494d0f401349baba89273c401d0287920e6734))
+- 修改 warning 时输出日志格式 ([be82135](https://github.com/lark-org/lark-cli/commit/be8213516d643a82bc1cd19330f37eba1b0ab1a6))
+- 解决本地开发时启用 https 证书和 host 不绑定问题 ([fe057d5](https://github.com/lark-org/lark-cli/commit/fe057d56eaede698f5c629717c7dbfe9c6a427b4))
+- 解决环境变量引入和运行时不一致问题 ([9040af8](https://github.com/lark-org/lark-cli/commit/9040af8612e0d9036b7adbc174dbc7744495eb9b))
 
 ### Features
 
-* **cmd:** 增加全局设置命令 ([ee0d2b9](https://github.com/lark-org/lark-cli/commit/ee0d2b9f3720265ed3e21f72a8f113c7f8778091))
-* 升级CLI，增加start和build命令支持构建React项目 ([22a05c4](https://github.com/lark-org/lark-cli/commit/22a05c4c4933d2bb51fdf400c808e0be8b2997c4))
-* 完善start命令和修复https配置问题 ([ffff2d9](https://github.com/lark-org/lark-cli/commit/ffff2d95c5b75518c614a750907fab368d0d1f66))
-* 完成build重构 ([2f4cbe9](https://github.com/lark-org/lark-cli/commit/2f4cbe98c21040448f180764fab74d0a3313fcfb))
-* 更新CI Config ([d27800e](https://github.com/lark-org/lark-cli/commit/d27800e5ccc882590619853ed0efbe0116a83eca))
+- **cmd:** 增加全局设置命令 ([ee0d2b9](https://github.com/lark-org/lark-cli/commit/ee0d2b9f3720265ed3e21f72a8f113c7f8778091))
+- 升级 CLI，增加 start 和 build 命令支持构建 React 项目 ([22a05c4](https://github.com/lark-org/lark-cli/commit/22a05c4c4933d2bb51fdf400c808e0be8b2997c4))
+- 完善 start 命令和修复 https 配置问题 ([ffff2d9](https://github.com/lark-org/lark-cli/commit/ffff2d95c5b75518c614a750907fab368d0d1f66))
+- 完成 build 重构 ([2f4cbe9](https://github.com/lark-org/lark-cli/commit/2f4cbe98c21040448f180764fab74d0a3313fcfb))
+- 更新 CI Config ([d27800e](https://github.com/lark-org/lark-cli/commit/d27800e5ccc882590619853ed0efbe0116a83eca))
 
 # [1.5.0](https://github.com/lark-org/lark-cli/compare/v1.4.0...v1.5.0) (2022-09-19)
 
-
 ### Bug Fixes
 
-* ci config ([8a8149d](https://github.com/lark-org/lark-cli/commit/8a8149d4d6a62dab9043313282dca8973d8d56c9))
-* module alias ([48f26c0](https://github.com/lark-org/lark-cli/commit/48f26c028197862553897575503318272db48414))
-* 修改ci trigger ([60494d0](https://github.com/lark-org/lark-cli/commit/60494d0f401349baba89273c401d0287920e6734))
-* 修改warning时输出日志格式 ([be82135](https://github.com/lark-org/lark-cli/commit/be8213516d643a82bc1cd19330f37eba1b0ab1a6))
-* 解决本地开发时启用https证书和host不绑定问题 ([fe057d5](https://github.com/lark-org/lark-cli/commit/fe057d56eaede698f5c629717c7dbfe9c6a427b4))
-* 解决环境变量引入和运行时不一致问题 ([9040af8](https://github.com/lark-org/lark-cli/commit/9040af8612e0d9036b7adbc174dbc7744495eb9b))
-
+- ci config ([8a8149d](https://github.com/lark-org/lark-cli/commit/8a8149d4d6a62dab9043313282dca8973d8d56c9))
+- module alias ([48f26c0](https://github.com/lark-org/lark-cli/commit/48f26c028197862553897575503318272db48414))
+- 修改 ci trigger ([60494d0](https://github.com/lark-org/lark-cli/commit/60494d0f401349baba89273c401d0287920e6734))
+- 修改 warning 时输出日志格式 ([be82135](https://github.com/lark-org/lark-cli/commit/be8213516d643a82bc1cd19330f37eba1b0ab1a6))
+- 解决本地开发时启用 https 证书和 host 不绑定问题 ([fe057d5](https://github.com/lark-org/lark-cli/commit/fe057d56eaede698f5c629717c7dbfe9c6a427b4))
+- 解决环境变量引入和运行时不一致问题 ([9040af8](https://github.com/lark-org/lark-cli/commit/9040af8612e0d9036b7adbc174dbc7744495eb9b))
 
 ### Features
 
-* 升级CLI，增加start和build命令支持构建React项目 ([22a05c4](https://github.com/lark-org/lark-cli/commit/22a05c4c4933d2bb51fdf400c808e0be8b2997c4))
-* 完善start命令和修复https配置问题 ([ffff2d9](https://github.com/lark-org/lark-cli/commit/ffff2d95c5b75518c614a750907fab368d0d1f66))
-* 完成build重构 ([2f4cbe9](https://github.com/lark-org/lark-cli/commit/2f4cbe98c21040448f180764fab74d0a3313fcfb))
-* 更新CI Config ([d27800e](https://github.com/lark-org/lark-cli/commit/d27800e5ccc882590619853ed0efbe0116a83eca))
+- 升级 CLI，增加 start 和 build 命令支持构建 React 项目 ([22a05c4](https://github.com/lark-org/lark-cli/commit/22a05c4c4933d2bb51fdf400c808e0be8b2997c4))
+- 完善 start 命令和修复 https 配置问题 ([ffff2d9](https://github.com/lark-org/lark-cli/commit/ffff2d95c5b75518c614a750907fab368d0d1f66))
+- 完成 build 重构 ([2f4cbe9](https://github.com/lark-org/lark-cli/commit/2f4cbe98c21040448f180764fab74d0a3313fcfb))
+- 更新 CI Config ([d27800e](https://github.com/lark-org/lark-cli/commit/d27800e5ccc882590619853ed0efbe0116a83eca))
 
 # [1.5.0](https://github.com/lark-org/lark-cli/compare/v1.4.0...v1.5.0) (2022-09-19)
 
-
 ### Bug Fixes
 
-* ci config ([8a8149d](https://github.com/lark-org/lark-cli/commit/8a8149d4d6a62dab9043313282dca8973d8d56c9))
-* module alias ([48f26c0](https://github.com/lark-org/lark-cli/commit/48f26c028197862553897575503318272db48414))
-* 修改ci trigger ([60494d0](https://github.com/lark-org/lark-cli/commit/60494d0f401349baba89273c401d0287920e6734))
-* 解决本地开发时启用https证书和host不绑定问题 ([fe057d5](https://github.com/lark-org/lark-cli/commit/fe057d56eaede698f5c629717c7dbfe9c6a427b4))
-* 解决环境变量引入和运行时不一致问题 ([9040af8](https://github.com/lark-org/lark-cli/commit/9040af8612e0d9036b7adbc174dbc7744495eb9b))
-
+- ci config ([8a8149d](https://github.com/lark-org/lark-cli/commit/8a8149d4d6a62dab9043313282dca8973d8d56c9))
+- module alias ([48f26c0](https://github.com/lark-org/lark-cli/commit/48f26c028197862553897575503318272db48414))
+- 修改 ci trigger ([60494d0](https://github.com/lark-org/lark-cli/commit/60494d0f401349baba89273c401d0287920e6734))
+- 解决本地开发时启用 https 证书和 host 不绑定问题 ([fe057d5](https://github.com/lark-org/lark-cli/commit/fe057d56eaede698f5c629717c7dbfe9c6a427b4))
+- 解决环境变量引入和运行时不一致问题 ([9040af8](https://github.com/lark-org/lark-cli/commit/9040af8612e0d9036b7adbc174dbc7744495eb9b))
 
 ### Features
 
-* 升级CLI，增加start和build命令支持构建React项目 ([22a05c4](https://github.com/lark-org/lark-cli/commit/22a05c4c4933d2bb51fdf400c808e0be8b2997c4))
-* 完善start命令和修复https配置问题 ([ffff2d9](https://github.com/lark-org/lark-cli/commit/ffff2d95c5b75518c614a750907fab368d0d1f66))
-* 完成build重构 ([2f4cbe9](https://github.com/lark-org/lark-cli/commit/2f4cbe98c21040448f180764fab74d0a3313fcfb))
-* 更新CI Config ([d27800e](https://github.com/lark-org/lark-cli/commit/d27800e5ccc882590619853ed0efbe0116a83eca))
+- 升级 CLI，增加 start 和 build 命令支持构建 React 项目 ([22a05c4](https://github.com/lark-org/lark-cli/commit/22a05c4c4933d2bb51fdf400c808e0be8b2997c4))
+- 完善 start 命令和修复 https 配置问题 ([ffff2d9](https://github.com/lark-org/lark-cli/commit/ffff2d95c5b75518c614a750907fab368d0d1f66))
+- 完成 build 重构 ([2f4cbe9](https://github.com/lark-org/lark-cli/commit/2f4cbe98c21040448f180764fab74d0a3313fcfb))
+- 更新 CI Config ([d27800e](https://github.com/lark-org/lark-cli/commit/d27800e5ccc882590619853ed0efbe0116a83eca))
 
 # [1.5.0](https://github.com/lark-org/lark-cli/compare/v1.4.0...v1.5.0) (2022-09-19)
 
-
 ### Bug Fixes
 
-* ci config ([854bba6](https://github.com/lark-org/lark-cli/commit/854bba6dd9b2b3245b972752e958bc50cf3e23d5))
-* module alias ([9133dba](https://github.com/lark-org/lark-cli/commit/9133dbadeb50962c41e663580161fb363ec38ef6))
-* 修改ci trigger ([e433040](https://github.com/lark-org/lark-cli/commit/e433040f0bc5a31d346e860603a099af4aeaae19))
-* 解决本地开发时启用https证书和host不绑定问题 ([2f9ecab](https://github.com/lark-org/lark-cli/commit/2f9ecabfa5db91d526659f6b732a1462e9b8b013))
-* 解决环境变量引入和运行时不一致问题 ([2ce26b6](https://github.com/lark-org/lark-cli/commit/2ce26b61974093949ac994a43467c855c6a761a8))
-
+- ci config ([854bba6](https://github.com/lark-org/lark-cli/commit/854bba6dd9b2b3245b972752e958bc50cf3e23d5))
+- module alias ([9133dba](https://github.com/lark-org/lark-cli/commit/9133dbadeb50962c41e663580161fb363ec38ef6))
+- 修改 ci trigger ([e433040](https://github.com/lark-org/lark-cli/commit/e433040f0bc5a31d346e860603a099af4aeaae19))
+- 解决本地开发时启用 https 证书和 host 不绑定问题 ([2f9ecab](https://github.com/lark-org/lark-cli/commit/2f9ecabfa5db91d526659f6b732a1462e9b8b013))
+- 解决环境变量引入和运行时不一致问题 ([2ce26b6](https://github.com/lark-org/lark-cli/commit/2ce26b61974093949ac994a43467c855c6a761a8))
 
 ### Features
 
-* 升级CLI，增加start和build命令支持构建React项目 ([8adad02](https://github.com/lark-org/lark-cli/commit/8adad02b6090df783be6730d6fe4e16354686b69))
-* 完善start命令和修复https配置问题 ([da56716](https://github.com/lark-org/lark-cli/commit/da567165f0bde5e828d8c3995d62ed5972b6bb78))
-* 完成build重构 ([dd499ec](https://github.com/lark-org/lark-cli/commit/dd499ec0864960d4035fdea280e91ef1651d3fd3))
-* 更新CI Config ([34f1c90](https://github.com/lark-org/lark-cli/commit/34f1c90e550149863813a983e154284f765c2f7d))
+- 升级 CLI，增加 start 和 build 命令支持构建 React 项目 ([8adad02](https://github.com/lark-org/lark-cli/commit/8adad02b6090df783be6730d6fe4e16354686b69))
+- 完善 start 命令和修复 https 配置问题 ([da56716](https://github.com/lark-org/lark-cli/commit/da567165f0bde5e828d8c3995d62ed5972b6bb78))
+- 完成 build 重构 ([dd499ec](https://github.com/lark-org/lark-cli/commit/dd499ec0864960d4035fdea280e91ef1651d3fd3))
+- 更新 CI Config ([34f1c90](https://github.com/lark-org/lark-cli/commit/34f1c90e550149863813a983e154284f765c2f7d))
 
 # [1.5.0](https://github.com/lark-org/lark-cli/compare/v1.4.0...v1.5.0) (2022-08-29)
 
-
 ### Bug Fixes
 
-* ci config ([854bba6](https://github.com/lark-org/lark-cli/commit/854bba6dd9b2b3245b972752e958bc50cf3e23d5))
-* module alias ([9133dba](https://github.com/lark-org/lark-cli/commit/9133dbadeb50962c41e663580161fb363ec38ef6))
-* 修改ci trigger ([e433040](https://github.com/lark-org/lark-cli/commit/e433040f0bc5a31d346e860603a099af4aeaae19))
-* 解决环境变量引入和运行时不一致问题 ([2ce26b6](https://github.com/lark-org/lark-cli/commit/2ce26b61974093949ac994a43467c855c6a761a8))
-
+- ci config ([854bba6](https://github.com/lark-org/lark-cli/commit/854bba6dd9b2b3245b972752e958bc50cf3e23d5))
+- module alias ([9133dba](https://github.com/lark-org/lark-cli/commit/9133dbadeb50962c41e663580161fb363ec38ef6))
+- 修改 ci trigger ([e433040](https://github.com/lark-org/lark-cli/commit/e433040f0bc5a31d346e860603a099af4aeaae19))
+- 解决环境变量引入和运行时不一致问题 ([2ce26b6](https://github.com/lark-org/lark-cli/commit/2ce26b61974093949ac994a43467c855c6a761a8))
 
 ### Features
 
-* 升级CLI，增加start和build命令支持构建React项目 ([8adad02](https://github.com/lark-org/lark-cli/commit/8adad02b6090df783be6730d6fe4e16354686b69))
-* 完善start命令和修复https配置问题 ([da56716](https://github.com/lark-org/lark-cli/commit/da567165f0bde5e828d8c3995d62ed5972b6bb78))
-* 完成build重构 ([dd499ec](https://github.com/lark-org/lark-cli/commit/dd499ec0864960d4035fdea280e91ef1651d3fd3))
-* 更新CI Config ([34f1c90](https://github.com/lark-org/lark-cli/commit/34f1c90e550149863813a983e154284f765c2f7d))
+- 升级 CLI，增加 start 和 build 命令支持构建 React 项目 ([8adad02](https://github.com/lark-org/lark-cli/commit/8adad02b6090df783be6730d6fe4e16354686b69))
+- 完善 start 命令和修复 https 配置问题 ([da56716](https://github.com/lark-org/lark-cli/commit/da567165f0bde5e828d8c3995d62ed5972b6bb78))
+- 完成 build 重构 ([dd499ec](https://github.com/lark-org/lark-cli/commit/dd499ec0864960d4035fdea280e91ef1651d3fd3))
+- 更新 CI Config ([34f1c90](https://github.com/lark-org/lark-cli/commit/34f1c90e550149863813a983e154284f765c2f7d))
 
 # [1.5.0](https://github.com/lark-org/lark-cli/compare/v1.4.0...v1.5.0) (2022-08-24)
 
-
 ### Bug Fixes
 
-* ci config ([ae28175](https://github.com/lark-org/lark-cli/commit/ae281753b19fba167b3b5823f94955405cc52460))
-* module alias ([42e430b](https://github.com/lark-org/lark-cli/commit/42e430b3d1a4bdc1b2ea44c2810edcd1327648e0))
-* 修改ci trigger ([771edd7](https://github.com/lark-org/lark-cli/commit/771edd7a400c3dfc6100341f72038a7cdd32bc1c))
-
+- ci config ([ae28175](https://github.com/lark-org/lark-cli/commit/ae281753b19fba167b3b5823f94955405cc52460))
+- module alias ([42e430b](https://github.com/lark-org/lark-cli/commit/42e430b3d1a4bdc1b2ea44c2810edcd1327648e0))
+- 修改 ci trigger ([771edd7](https://github.com/lark-org/lark-cli/commit/771edd7a400c3dfc6100341f72038a7cdd32bc1c))
 
 ### Features
 
-* 升级CLI，增加start和build命令支持构建React项目 ([03f88ad](https://github.com/lark-org/lark-cli/commit/03f88ad48a54675b8b38cd981bc0c973a91cf856))
-* 完善start命令和修复https配置问题 ([10b3814](https://github.com/lark-org/lark-cli/commit/10b38147fea12e1632639d6a3b4874c2d1e66843))
-* 完成build重构 ([636d5ab](https://github.com/lark-org/lark-cli/commit/636d5ab2cca5a7001c6e4cd92fa6f2476d95f389))
-* 更新CI Config ([8ee28de](https://github.com/lark-org/lark-cli/commit/8ee28dec99c14f806bcb04d5c78cfb956a9f4915))
+- 升级 CLI，增加 start 和 build 命令支持构建 React 项目 ([03f88ad](https://github.com/lark-org/lark-cli/commit/03f88ad48a54675b8b38cd981bc0c973a91cf856))
+- 完善 start 命令和修复 https 配置问题 ([10b3814](https://github.com/lark-org/lark-cli/commit/10b38147fea12e1632639d6a3b4874c2d1e66843))
+- 完成 build 重构 ([636d5ab](https://github.com/lark-org/lark-cli/commit/636d5ab2cca5a7001c6e4cd92fa6f2476d95f389))
+- 更新 CI Config ([8ee28de](https://github.com/lark-org/lark-cli/commit/8ee28dec99c14f806bcb04d5c78cfb956a9f4915))
 
 # [1.4.0](https://github.com/lark-org/lark-cli/compare/v1.3.4...v1.4.0) (2022-06-29)
 
