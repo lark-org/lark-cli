@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/lark-org/lark-cli/compare/v1.6.0...v1.7.0) (2022-11-05)
+
+
+### Features
+
+* **handlebar:** 更换渲染模版引擎为ejs，防止react语法导致渲染失败 ([e9d0a97](https://github.com/lark-org/lark-cli/commit/e9d0a979dac82ea4738f866e06cc90595fda5e44))
+
 # [1.5.0](https://github.com/lark-org/lark-cli/compare/v1.4.0...v1.5.0) (2022-09-20)
 
 
