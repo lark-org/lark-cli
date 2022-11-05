@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/lark-org/lark-cli/compare/v1.7.0...v1.7.1) (2022-11-05)
+
+
+### Bug Fixes
+
+* **project:** 解决因为构建类型问题导致的build失败问题 ([50c8b87](https://github.com/lark-org/lark-cli/commit/50c8b874274300aaf8eec9e5f01ec7d175b74180))
+
 # [1.7.0](https://github.com/lark-org/lark-cli/compare/v1.6.0...v1.7.0) (2022-11-05)
 
 
