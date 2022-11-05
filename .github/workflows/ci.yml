@@ -31,6 +31,8 @@ jobs:
         run: pnpm install --frozen-lockfile
       - name: 执行 Lint
         run: pnpm run lint
+      - name: 构建
+        run: pnpm run build
   release:
     name: Release
     runs-on: ubuntu-latest
