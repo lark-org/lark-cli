@@ -25,10 +25,12 @@ export class BuildAction extends AbstractAction {
 
       const statsJson = options.find((option) => option.name === 'json')?.value
       const analyze = options.find((option) => option.name === 'analyze')?.value
+      const isUpload = options.find((option) => option.name === 'upload')?.value
 
       compilerBuild({
         statsJson: !!statsJson,
-        analyze: !!analyze
+        analyze: !!analyze,
+        upload: !!isUpload
       })
     } catch (error) {
       if (error instanceof Error) {
