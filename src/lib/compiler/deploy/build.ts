@@ -41,6 +41,7 @@ const useYarn = fs.existsSync(paths.yarnLockFile)
 interface BuildOptions {
   analyze?: boolean
   statsJson?: boolean
+  upload?: boolean
 }
 
 interface BuildResult {
@@ -52,8 +53,7 @@ interface BuildResult {
 
 export async function build(
   previousFileSizes: any,
-  buildOptions?: BuildOptions,
-  upload?: boolean
+  buildOptions?: BuildOptions
 ): Promise<BuildResult> {
   const config: webpack.Configuration = await configFactory()
 
@@ -64,7 +64,7 @@ export async function build(
     config,
     previousFileSizes,
     buildOptions?.statsJson,
-    upload
+    buildOptions?.upload
   )
 
   return buildResult
