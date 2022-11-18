@@ -200,13 +200,16 @@ function copyPublicFolder() {
   })
 }
 
-async function uploadToS3(option: { deployPath: string; filePath: string }) {
+async function uploadToS3(
+  service: Upload,
+  option: { deployPath: string; filePath: string }
+) {
   const { deployPath, filePath } = option
   console.log(`开始上传文件：${chalk.green(filePath)}`)
-  const uploadService = new Upload()
+
   const contentType = mime.getType(filePath)
   try {
-    const result = await uploadService.putItemInBucket(
+    const result = await service.putItemInBucket(
       deployPath,
       fs.readFileSync(filePath),
       { path: '', ContentType: contentType }
@@ -214,6 +217,7 @@ async function uploadToS3(option: { deployPath: string; filePath: string }) {
     console.log(`上传成功，CDN地址为：${chalk.green(result.completedUrl)}`)
   } catch (error) {
     console.log(error)
+    throw new Error(error)
   }
 }
 
@@ -278,8 +282,11 @@ export default (buildOptions: BuildOptions) => {
             buildFolder,
             `${APP_NAME}/${VERSION}`
           )
+          const uploadService = new Upload()
 
-          Promise.all(uploadOptions.map((option) => uploadToS3(option)))
+          Promise.all(
+            uploadOptions.map((option) => uploadToS3(uploadService, option))
+          )
             .then(() => {
               console.log(
                 `\n${INFO_PREFIX} 上传完成！共上传 ${chalk.green(
