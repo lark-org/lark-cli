@@ -8,21 +8,31 @@ import { ERROR_PREFIX } from '@/utils/log'
 import { getConfigInfo, getPrintTableData, setConfigInfo } from '@/utils/config'
 import { AbstractAction } from './abstract.action'
 
-const configNameEnum = ['ali-key', 'ali-secret', 'ali-bucket']
+const configNameEnum = [
+  's3-key',
+  's3-secret',
+  's3-bucket',
+  's3-region',
+  's3-cdn',
+  's3-endpoint'
+]
 
 export class ConfigAction extends AbstractAction {
   public async handle(inputs: Input[], options: Input[]) {
     try {
-      const aliConfig = options.filter(
+      const s3Config = options.filter(
         (option) =>
-          option.name === 'ali-key' ||
-          option.name === 'ali-secret' ||
-          option.name === 'ali-bucket'
+          option.name === 's3-key' ||
+          option.name === 's3-secret' ||
+          option.name === 's3-bucket' ||
+          option.name === 's3-region' ||
+          option.name === 's3-endpoint' ||
+          option.name === 's3-cdn'
       )
       const showList = options.find((option) => option.name === 'list')?.value
       const configName = options.find((option) => option.name === 'get')?.value
-      if (aliConfig.filter((config) => !!config.value).length) {
-        onSet(aliConfig)
+      if (s3Config.filter((config) => !!config.value).length) {
+        onSet(s3Config)
       }
       if (showList) {
         console.log(`Show config list.\n${buildListAsTable()}`)
