@@ -17,7 +17,9 @@ export const getS3Config = () => {
   const s3Config: Record<string, any> = {}
   s3ConfigKeys.forEach((name) => {
     const value =
-      configInfo[name] || s3[name] || process.env[name.toUpperCase()]
+      configInfo[name] ||
+      s3[name] ||
+      process.env[name.toUpperCase().replace('-', '_')]
     if (!value) {
       console.log(chalk.red(`${name} 对应的 value 不能为空！`))
       process.exit(1)
