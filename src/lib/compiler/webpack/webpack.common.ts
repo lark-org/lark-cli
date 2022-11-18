@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import fs from 'fs-extra'
 import path from 'path'
 import ModuleScopePlugin from 'react-dev-utils/ModuleScopePlugin'
@@ -36,7 +37,7 @@ const useTailwind = fs.existsSync(
   path.join(paths.appPath, 'tailwind.config.js')
 )
 
-const { __DEV__, PUBLIC_PATH: publicPath } = variables
+const { PUBLIC_PATH: publicPath } = variables
 const { transpiler, transpilerOptions } = builds
 const { appIndex, appSrc, appHtml, appPolyfill } = paths
 
@@ -63,8 +64,10 @@ function getStyleLoaders(external?: boolean) {
     }
 
     return [
-      // eslint-disable-next-line no-nested-ternary
-      __DEV__ ? require.resolve('style-loader') : MiniCssExtractPlugin.loader,
+      // eslint-disable-next-line
+      variables.__DEV__
+        ? require.resolve('style-loader')
+        : MiniCssExtractPlugin.loader,
       {
         loader: require.resolve('css-loader'),
         options: {
@@ -149,13 +152,13 @@ function getScriptLoader() {
       cacheDirectory: true,
       // See #6846 for context on why cacheCompression is disabled
       cacheCompression: false,
-      compact: !__DEV__,
+      compact: !variables.__DEV__,
       configFile: require.resolve('@/lib/compiler/babel.config.js'),
       ...transpilerOptions
     }
   }
 
-  if (transpiler === 'esbuild' && __DEV__) {
+  if (transpiler === 'esbuild' && variables.__DEV__) {
     return esbLoader
   }
 
@@ -184,7 +187,7 @@ const webpackConfig = ({
   )
   let minify
 
-  if (!__DEV__) {
+  if (!variables.__DEV__) {
     minify = {
       removeComments: true,
       collapseWhitespace: true,
@@ -207,28 +210,28 @@ const webpackConfig = ({
     },
     output: {
       path: paths.appBuild,
-      pathinfo: __DEV__,
+      pathinfo: variables.__DEV__,
       // There will be one main bundle, and one file per asynchronous chunk.
       // In development, it does not produce real files.
-      filename: !__DEV__
+      filename: !variables.__DEV__
         ? 'static/js/[name].[contenthash:8].js'
-        : __DEV__ && 'static/js/bundle.js',
+        : variables.__DEV__ && 'static/js/bundle.js',
       // There are also additional JS chunk files if you use code splitting.
-      chunkFilename: !__DEV__
+      chunkFilename: !variables.__DEV__
         ? 'static/js/[name].[contenthash:8].chunk.js'
-        : __DEV__ && 'static/js/[name].chunk.js',
+        : variables.__DEV__ && 'static/js/[name].chunk.js',
       assetModuleFilename: 'static/media/[name].[hash][ext]',
       // webpack uses `publicPath` to determine where the app is being served from.
       // It requires a trailing slash, or the file assets will get an incorrect path.
       // We inferred the "public path" (such as / or /my-project) from homepage.
       publicPath,
       // Point sourcemap entries to original disk location (format as URL on Windows)
-      devtoolModuleFilenameTemplate: !__DEV__
+      devtoolModuleFilenameTemplate: !variables.__DEV__
         ? (info) =>
             path
               .relative(paths.appSrc, info.absoluteResourcePath)
               .replace(/\\/g, '/')
-        : __DEV__ &&
+        : variables.__DEV__ &&
           ((info) =>
             path.resolve(info.absoluteResourcePath).replace(/\\/g, '/'))
     },
@@ -419,7 +422,7 @@ const webpackConfig = ({
     plugins: [
       new HtmlWebpackPlugin({
         template: appHtml,
-        inject: !__DEV__ ? 'body' : 'head',
+        inject: !variables.__DEV__ ? 'body' : 'head',
         minify
       }),
       new ModuleNotFoundPlugin(paths.appPath),
@@ -462,7 +465,7 @@ const webpackConfig = ({
       }),
       useTypeScript &&
         new ForkTsCheckerWebpackPlugin({
-          async: __DEV__,
+          async: variables.__DEV__,
           typescript: {
             typescriptPath: resolve.sync('typescript', {
               basedir: paths.appNodeModules
