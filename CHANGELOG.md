@@ -1,3 +1,9 @@
+## [1.8.4](https://github.com/lark-org/lark-cli/compare/v1.8.3...v1.8.4) (2022-11-18)
+
+### Bug Fixes
+
+- env variables use \`-\` error ([508ecc1](https://github.com/lark-org/lark-cli/commit/508ecc18b65aa3d6ee75f0a85c073564eeafb991))
+
 ## [1.8.3](https://github.com/lark-org/lark-cli/compare/v1.8.2...v1.8.3) (2022-11-18)
 
 ### Bug Fixes
