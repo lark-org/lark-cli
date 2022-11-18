@@ -1,3 +1,9 @@
+## [1.8.3](https://github.com/lark-org/lark-cli/compare/v1.8.2...v1.8.3) (2022-11-18)
+
+### Bug Fixes
+
+- 解决上传失败时任务未终止问题 ([bdea126](https://github.com/lark-org/lark-cli/commit/bdea1262f6d21326f97ef1529a3f8f3d5edf5842))
+
 ## [1.8.2](https://github.com/lark-org/lark-cli/compare/v1.8.1...v1.8.2) (2022-11-18)
 
 ### Bug Fixes
