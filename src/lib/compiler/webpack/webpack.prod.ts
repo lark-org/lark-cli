@@ -11,6 +11,7 @@ import paths from '../variables/paths'
 import configFactory from './webpack.common'
 import { processWebpackConfig } from '../variables/custom-config'
 import StyleExtHtmlWebpackPlugin from '../webpack-plugins/style-ext-html-webpack-plugin'
+import ScriptExtHtmlWebpackPlugin from '../webpack-plugins/script-ext-html-webpack-plugin'
 
 const isEnvProductionProfile = process.argv.includes('--profile')
 const { appSrc, appBuild, swSrc } = paths
@@ -36,6 +37,22 @@ export default () =>
                 test: /\.css$/,
                 attribute: 'onerror',
                 value: '__STYLE_LOAD_ERROR__(event)'
+              },
+              {
+                test: /\.js$/,
+                attribute: 'onerror',
+                value:
+                  'window.__ERR_RESOURCES__ = (window.__ERR_RESOURCES__ || []).concat(this.src)'
+              }
+            ]
+          }),
+          new ScriptExtHtmlWebpackPlugin(HtmlWebpackPlugin, {
+            custom: [
+              {
+                test: /\.js$/,
+                attribute: 'onerror',
+                value:
+                  'window.__ERR_RESOURCES__ = (window.__ERR_RESOURCES__ || []).concat(this.src)'
               }
             ]
           })

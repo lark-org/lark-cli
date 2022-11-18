@@ -11,7 +11,7 @@ import { FileDescriptor } from 'webpack-manifest-plugin/dist/helpers'
 import ForkTsCheckerWarningWebpackPlugin from 'react-dev-utils/ForkTsCheckerWarningWebpackPlugin'
 import ForkTsCheckerWebpack from 'react-dev-utils/ForkTsCheckerWebpackPlugin'
 import InterpolateHtmlPlugin from 'react-dev-utils/InterpolateHtmlPlugin'
-
+import PreloadWebpackPlugin from '@vue/preload-webpack-plugin'
 import variables from '@/lib/compiler/variables'
 import paths from '@/lib/compiler/variables/paths'
 import builds from '@/lib/compiler/variables/builds'
@@ -424,6 +424,15 @@ const webpackConfig = ({
         template: appHtml,
         inject: !variables.__DEV__ ? 'body' : 'head',
         minify
+      }),
+      new PreloadWebpackPlugin({
+        rel: 'prefetch',
+        include: 'initial', // or 'initial'
+        as(relEntry: string) {
+          if (/\.css$/.test(relEntry)) return 'style'
+          if (/\.woff$/.test(relEntry)) return 'font'
+          return 'script'
+        }
       }),
       new ModuleNotFoundPlugin(paths.appPath),
       new webpack.DefinePlugin(stringified),
