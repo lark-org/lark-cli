@@ -1,3 +1,9 @@
+## [1.8.1](https://github.com/lark-org/lark-cli/compare/v1.8.0...v1.8.1) (2022-11-18)
+
+### Bug Fixes
+
+- \_\_dev 判断导致生产构建问题 ([0966fdb](https://github.com/lark-org/lark-cli/commit/0966fdbcee9668f4120111f2812b38ede997e1ed))
+
 # [1.8.0](https://github.com/lark-org/lark-cli/compare/v1.7.2...v1.8.0) (2022-11-18)
 
 ### Features
