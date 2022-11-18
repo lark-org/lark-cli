@@ -21,12 +21,18 @@ export class BuildCommand extends AbstractCommand {
       .option('--json', 'Output webpack build stats json.', false)
       .option('--analyze', 'Output webpack analyze result.', false)
       .option('--skip-verify', 'Skip git verify.', false)
+      .option(
+        '--upload',
+        'Whether to upload the bundle depends on the s3 configuration.',
+        false
+      )
       .allowUnknownOption(false)
       .action(async (command: Record<string, any>) => {
         const options: Input[] = []
 
         options.push({ name: 'analyze', value: command.analyze })
         options.push({ name: 'json', value: command.json })
+        options.push({ name: 'upload', value: !!command.upload })
         options.push({ name: 'skip-verify', value: !!command.skipVerify })
 
         options.push({ name: 'node-env', value: command.nodeEnv })
