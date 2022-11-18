@@ -1,3 +1,9 @@
+# [1.8.0](https://github.com/lark-org/lark-cli/compare/v1.7.2...v1.8.0) (2022-11-18)
+
+### Features
+
+- **build:** 增加上传构建产物至 s3 ([faaf769](https://github.com/lark-org/lark-cli/commit/faaf769332f0ad8e883227db6aaed16cfa8e0327))
+
 ## [1.7.2](https://github.com/lark-org/lark-cli/compare/v1.7.1...v1.7.2) (2022-11-05)
 
 ### Bug Fixes
