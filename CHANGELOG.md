@@ -1,3 +1,9 @@
+## [1.8.2](https://github.com/lark-org/lark-cli/compare/v1.8.1...v1.8.2) (2022-11-18)
+
+### Bug Fixes
+
+- upload 传递错误问题 ([eee822d](https://github.com/lark-org/lark-cli/commit/eee822db9a7c0c88fc2e48aa67b1a1f3a903ddb7))
+
 ## [1.8.1](https://github.com/lark-org/lark-cli/compare/v1.8.0...v1.8.1) (2022-11-18)
 
 ### Bug Fixes
