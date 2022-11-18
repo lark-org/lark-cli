@@ -1,3 +1,9 @@
+## [1.8.5](https://github.com/lark-org/lark-cli/compare/v1.8.4...v1.8.5) (2022-11-18)
+
+### Bug Fixes
+
+- 增加 prefetch 和资源加载失败重试机制 ([c529077](https://github.com/lark-org/lark-cli/commit/c52907765597e9bc9da8b90dd79c838cf292136f))
+
 ## [1.8.4](https://github.com/lark-org/lark-cli/compare/v1.8.3...v1.8.4) (2022-11-18)
 
 ### Bug Fixes
