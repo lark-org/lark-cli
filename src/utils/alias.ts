@@ -4,8 +4,4 @@ import path from 'path'
 const resolve = (resolvePath: string): string =>
   path.resolve(__dirname, '../', resolvePath)
 
-moduleAlias.addAliases({
-  '@': resolve('.')
-})
-
-moduleAlias()
+moduleAlias(resolve('../package.json'))

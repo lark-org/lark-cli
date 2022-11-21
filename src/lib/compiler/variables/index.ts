@@ -1,3 +1,4 @@
+/* eslint-disable one-var */
 import { getCustomConfig } from '@/lib/compiler/variables/custom-config'
 import { getProjectFilePath } from './utils'
 
@@ -7,11 +8,19 @@ if (!process.env.APP_ENV) {
   process.env.APP_ENV = 'production'
 }
 const { APP_ENV } = process.env
-// eslint-disable-next-line
-const appPackageJson = require(require.resolve(
-  getProjectFilePath('package.json')
-))
-const { name: APP_NAME, version: VERSION } = appPackageJson
+let APP_NAME = '',
+  VERSION = ''
+try {
+  // eslint-disable-next-line
+  const appPackageJson = require(require.resolve(
+    getProjectFilePath('package.json')
+  ))
+  const { name, version } = appPackageJson
+  APP_NAME = name
+  VERSION = version
+  // eslint-disable-next-line no-empty
+} catch (error) {}
+
 const PUBLIC_PATH = '/'
 // eslint-disable-next-line no-underscore-dangle
 const __DEV__ = process.env.NODE_ENV !== 'production'
