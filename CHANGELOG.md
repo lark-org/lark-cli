@@ -1,3 +1,9 @@
+## [1.8.6](https://github.com/lark-org/lark-cli/compare/v1.8.5...v1.8.6) (2022-11-21)
+
+### Bug Fixes
+
+- 解决全局命令在 react 项目外使用时报错问题 ([851c336](https://github.com/lark-org/lark-cli/commit/851c33689b3d913c493580dbf04bf05facf28178))
+
 ## [1.8.5](https://github.com/lark-org/lark-cli/compare/v1.8.4...v1.8.5) (2022-11-18)
 
 ### Bug Fixes
