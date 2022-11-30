@@ -32,7 +32,7 @@ export function getAllFiles(base: string, skipFiles: string[] = []): string[] {
   const skip = [...DEFAULT_SKIP_FILES, ...skipFiles]
   return readdirSync(base)
     .filter(
-      (i) => !skip.includes(i) || !i.endsWith(DEFAULT_SKIP_FILES_END_WITH)
+      (i) => !skip.includes(i) && !i.endsWith(DEFAULT_SKIP_FILES_END_WITH)
     )
     .reduce((prev: string[], next) => {
       const path = `${base}/${next}`
