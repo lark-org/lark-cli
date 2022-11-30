@@ -58,6 +58,7 @@ const variables = {
   BUILD_TIME: `${buildTime.toLocaleDateString()} ${buildTime.toLocaleTimeString()}`,
   APP_LOG: true,
   FAST_REFRESH: process.env.FAST_REFRESH !== 'false',
+  UPLOAD_PATH: `${APP_NAME}/${VERSION}`,
   ...esbuild,
   ...buildOptions,
   ...customVariables

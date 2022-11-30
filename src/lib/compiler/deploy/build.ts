@@ -32,7 +32,6 @@ const WARN_AFTER_BUNDLE_GZIP_SIZE = 512 * 1024
 const WARN_AFTER_CHUNK_GZIP_SIZE = 1024 * 1024
 
 const { appPath, appBuild } = paths
-const { APP_NAME, VERSION, PUBLIC_PATH } = variables
 
 const isInteractive = process.stdout.isTTY
 
@@ -265,23 +264,28 @@ export default (buildOptions: BuildOptions) => {
         console.log()
 
         const appPackage = require(paths.appPackageJson)
-        const publicUrl = PUBLIC_PATH
+        const publicUrl = variables.PUBLIC_PATH
         // const { publicPath } = config.output;
         const buildFolder = path.relative(process.cwd(), paths.appBuild)
         printHostingInstructions(
           appPackage,
           publicUrl,
-          PUBLIC_PATH,
+          variables.PUBLIC_PATH,
           buildFolder,
           useYarn
         )
 
         if (upload) {
+          const { UPLOAD_PATH, PUBLIC_PATH } = variables
+          if (PUBLIC_PATH === '/' || PUBLIC_PATH === './') {
+            console.warn(
+              `${INFO_PREFIX} 请注意：当前已开启构建后上传功能，请确认 PUBLIC_PATH 地址是否正确，如果入口文件和上传地址在同一S3或者服务器，请忽略。\n否则上传后可能导致静态文件访问错误，(当前上传地址为 ${UPLOAD_PATH})，如需修改上传或使用的资源地址，请修改项目配置 ${chalk.red(
+                'PUBLIC_PATH'
+              )} 和 ${chalk.red('UPLOAD_PATH')}\n`
+            )
+          }
           console.log(`${INFO_PREFIX} 开始上传文件...\n`)
-          const uploadOptions = getUploadOptions(
-            buildFolder,
-            `${APP_NAME}/${VERSION}`
-          )
+          const uploadOptions = getUploadOptions(buildFolder, UPLOAD_PATH)
           const uploadService = new Upload()
 
           Promise.all(
