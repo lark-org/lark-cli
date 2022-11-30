@@ -1,3 +1,9 @@
+## [1.8.9](https://github.com/lark-org/lark-cli/compare/v1.8.8...v1.8.9) (2022-11-30)
+
+### Bug Fixes
+
+- ignore file upload filter ([6327956](https://github.com/lark-org/lark-cli/commit/6327956ab7f409fecaac622ee6e4c16ee052d2cb))
+
 ## [1.8.8](https://github.com/lark-org/lark-cli/compare/v1.8.7...v1.8.8) (2022-11-30)
 
 ### Bug Fixes
