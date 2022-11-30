@@ -1,3 +1,9 @@
+## [1.8.7](https://github.com/lark-org/lark-cli/compare/v1.8.6...v1.8.7) (2022-11-30)
+
+### Bug Fixes
+
+- ignore files ([c68da4c](https://github.com/lark-org/lark-cli/commit/c68da4c33519ab1dfa32ed459b4bd08b2afcdbc2))
+
 ## [1.8.6](https://github.com/lark-org/lark-cli/compare/v1.8.5...v1.8.6) (2022-11-21)
 
 ### Bug Fixes
