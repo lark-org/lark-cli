@@ -1,3 +1,9 @@
+## [1.8.8](https://github.com/lark-org/lark-cli/compare/v1.8.7...v1.8.8) (2022-11-30)
+
+### Bug Fixes
+
+- file skip&upload path custom ([bcdc057](https://github.com/lark-org/lark-cli/commit/bcdc057b9d3889abc4625f7709569728b3bbfe7c))
+
 ## [1.8.7](https://github.com/lark-org/lark-cli/compare/v1.8.6...v1.8.7) (2022-11-30)
 
 ### Bug Fixes
