@@ -11,6 +11,8 @@ const DEFAULT_SKIP_FILES = [
   '.gitkeep'
 ]
 
+const DEFAULT_SKIP_FILES_END_WITH = ['.LICENSE.txt']
+
 /**
  * 判断文件是否是文件夹
  * @param path 文件路径
@@ -29,7 +31,9 @@ export function isDirectory(path: string) {
 export function getAllFiles(base: string, skipFiles: string[] = []): string[] {
   const skip = [...DEFAULT_SKIP_FILES, ...skipFiles]
   return readdirSync(base)
-    .filter((i) => !skip.includes(i))
+    .filter(
+      (i) => !skip.includes(i) || DEFAULT_SKIP_FILES_END_WITH.indexOf(i) < 0
+    )
     .reduce((prev: string[], next) => {
       const path = `${base}/${next}`
       if (isDirectory(path)) {
