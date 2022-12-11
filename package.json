@@ -83,7 +83,7 @@
     "ejs": "^3.1.8",
     "esbuild": "^0.16.4",
     "esbuild-loader": "^2.19.0",
-    "escape-string-regexp": "4.0.0",
+    "escape-string-regexp": "5.0.0",
     "execa": "5.1.1",
     "file-loader": "^6.2.0",
     "fs-extra": "^10.1.0",
