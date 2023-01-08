@@ -75,7 +75,7 @@
     "chalk": "^4.1.2",
     "check-dependencies": "^1.1.0",
     "cli-table3": "^0.6.3",
-    "commander": "^8.3.0",
+    "commander": "^9.5.0",
     "consolidate": "^0.16.0",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.0.0",
