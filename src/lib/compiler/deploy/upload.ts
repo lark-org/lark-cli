@@ -231,8 +231,6 @@ class Upload {
         Key: dir
       })
       await this.s3Client.send(commandDelete)
-
-      return
     } catch (e) {
       throw e
     }
