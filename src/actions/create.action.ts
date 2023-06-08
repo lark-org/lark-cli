@@ -28,9 +28,12 @@ const templateRepoUrls = {
   默认: 'https://github.com/virgoone/project-template.git'
 }
 const platforms = {
-  Default: 'default',
-  Console: 'console',
-  Mobile: 'mobile'
+  'Default（默认，只包含一个简易页面，使用React18.x+Ts）': 'default',
+  'Arco Template（基于Arco Design，使用React18.x，支持国际化和大部分模版）':
+    'console',
+  'Antd Template（基于Ant Design 5.0，使用React18.x，支持国际化和大部分模版）':
+    'antd-console',
+  'Mobile Template（手机端基础模版，使用React18.x）': 'mobile'
 }
 const browserslist = {
   mobile: ['Android >= 4', 'iOS >= 9'],
