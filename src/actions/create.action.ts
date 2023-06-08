@@ -346,7 +346,8 @@ const create = async (projectName: string, options: Input[]) => {
         pkg.name = projectName
         pkg.browserslist = mobile ? browserslist.mobile : browserslist.pc
         if (pkg.scripts.start) {
-          pkg.scripts.start = `lark-cli-service start -p ${port}`
+          pkg.scripts.start = `lark start -p ${port}`
+          pkg.scripts['start:https'] = `lark start -p ${port} --https`
         }
 
         await fs.writeFile(pkgFile, JSON.stringify(pkg, null, 2))
