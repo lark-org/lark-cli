@@ -215,7 +215,7 @@ const getTemplateInfo = async () => {
     console.log('please input a legal template url')
   }
 
-  if (platform && platform === platforms.Mobile) {
+  if (platform && platform === 'mobile') {
     mobile = true
   }
 
