@@ -291,6 +291,7 @@ const create = async (projectName: string, options: Input[]) => {
   Metalsmith(__dirname)
     .metadata({
       name: projectName,
+      title: projectName,
       author,
       email,
       port,
