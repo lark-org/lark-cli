@@ -203,6 +203,7 @@ const webpackConfig = ({
   }
 
   return {
+    target: ['browserslist'],
     // entry: appIndex,
     entry: {
       // @ts-ignore
