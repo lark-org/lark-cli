@@ -252,7 +252,7 @@ const replaceProjectInLocal = async (projectName: string) => {
 
 const defaultTemplateInfo = {
   templateUrl: templateRepoUrls.默认,
-  platform: platforms.Default,
+  platform: 'default',
   mobile: false
 }
 
@@ -306,11 +306,15 @@ const create = async (projectName: string, options: Input[]) => {
 
       await Promise.all(
         keys.map((key) => {
-          console.log(chalk.green(`${EMOJIS.POINT_RIGHT} 写入 ${key}`))
           // 控制台应用不需要替换
-          if (platform === platforms.Console) {
+          if (
+            platform === 'console' ||
+            platform === 'antd-console' ||
+            key?.endsWith('.html')
+          ) {
             return Promise.resolve()
           }
+          console.log(chalk.green(`${EMOJIS.POINT_RIGHT} 写入 ${key}`))
           const str = files[key].contents.toString()
           return new Promise((resolve, reject) => {
             // eslint-disable-next-line consistent-return
