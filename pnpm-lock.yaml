@@ -52,7 +52,7 @@ dependencies:
     version: 4.0.70
   '@vue/preload-webpack-plugin':
     specifier: ^2.0.0
-    version: 2.0.0(html-webpack-plugin@5.5.1)(webpack@5.85.1)
+    version: 2.0.0(html-webpack-plugin@5.5.3)(webpack@5.85.1)
   babel-eslint:
     specifier: ^10.1.0
     version: 10.1.0(eslint@8.42.0)
@@ -136,7 +136,7 @@ dependencies:
     version: 2.0.0
   html-webpack-plugin:
     specifier: ^5.5.1
-    version: 5.5.1(webpack@5.85.1)
+    version: 5.5.3(webpack@5.85.1)
   ini:
     specifier: ^4.1.1
     version: 4.1.1
@@ -4527,14 +4527,14 @@ packages:
       pino: 7.11.0
     dev: false
 
-  /@vue/preload-webpack-plugin@2.0.0(html-webpack-plugin@5.5.1)(webpack@5.85.1):
+  /@vue/preload-webpack-plugin@2.0.0(html-webpack-plugin@5.5.3)(webpack@5.85.1):
     resolution: {integrity: sha512-RoorRB50WehYbsiWu497q8egZBYlrvOo9KBUG41uth4O023Cbs+7POLm9uw2CAiViBAIhvpw1Y4w4i+MZxOfXw==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
       html-webpack-plugin: ^5.0.0 || ^4.5.1
       webpack: ^5.20.0 || ^4.1.0
     dependencies:
-      html-webpack-plugin: 5.5.1(webpack@5.85.1)
+      html-webpack-plugin: 5.5.3(webpack@5.85.1)
       webpack: 5.85.1(esbuild@0.17.19)
     dev: false
 
@@ -4650,12 +4650,12 @@ packages:
     dependencies:
       acorn: 8.8.0
 
-  /acorn-jsx@5.3.2(acorn@8.8.0):
+  /acorn-jsx@5.3.2(acorn@8.8.2):
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
     peerDependencies:
       acorn: ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
-      acorn: 8.8.0
+      acorn: 8.8.2
 
   /acorn-walk@8.2.0:
     resolution: {integrity: sha512-k+iyHEuPgSw6SbuDpGQM+06HQUa04DZ3o+F6CSzXMvvI5KMvnaEqXe+YVe555R9nn6GPt404fos4wcgpw12SDA==}
@@ -7111,8 +7111,8 @@ packages:
     resolution: {integrity: sha512-7OASN1Wma5fum5SrNhFMAMJxOUAbhyfQ8dQ//PJaJbNw0URTPWqIghHWt1MmAANKhHZIYOHruW4Kw4ruUWOdGw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      acorn: 8.8.0
-      acorn-jsx: 5.3.2(acorn@8.8.0)
+      acorn: 8.8.2
+      acorn-jsx: 5.3.2(acorn@8.8.2)
       eslint-visitor-keys: 3.4.1
 
   /esprima@4.0.1:
@@ -7911,8 +7911,8 @@ packages:
       terser: 5.17.7
     dev: false
 
-  /html-webpack-plugin@5.5.1(webpack@5.85.1):
-    resolution: {integrity: sha512-cTUzZ1+NqjGEKjmVgZKLMdiFg3m9MdRXkZW2OEe69WYVi5ONLMmlnSZdXzGGMOq0C8jGDrL6EWyEDDUioHO/pA==}
+  /html-webpack-plugin@5.5.3(webpack@5.85.1):
+    resolution: {integrity: sha512-6YrDKTuqaP/TquFH7h4srYWsZx+x6k6+FbsTm0ziCwGHDP78Unr1r9F/H4+sGmMbX08GQcJ+K64x55b+7VM/jg==}
     engines: {node: '>=10.13.0'}
     peerDependencies:
       webpack: ^5.20.0
