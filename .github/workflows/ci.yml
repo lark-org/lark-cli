@@ -28,7 +28,7 @@ jobs:
           node-version: '16'
           cache: 'pnpm'
       - name: 安装依赖
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --recursive --store=node_modules/.pnpm-store --frozen-lockfile
       - name: 执行 Lint
         run: pnpm run lint
   release:
