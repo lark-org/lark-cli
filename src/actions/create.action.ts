@@ -311,7 +311,11 @@ const create = async (projectName: string, options: Input[]) => {
           if (
             platform === 'console' ||
             platform === 'antd-console' ||
-            key?.endsWith('.html')
+            key?.endsWith('.html') ||
+            key?.endsWith('.png') ||
+            key?.endsWith('.jpg') ||
+            key?.endsWith('.gif') ||
+            key?.endsWith('.svg')
           ) {
             return Promise.resolve()
           }
