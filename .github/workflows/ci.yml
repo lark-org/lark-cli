@@ -53,25 +53,8 @@ jobs:
         run: pnpm run build
       # Release using semantic-release.
       # While this runs on all branches, it will only release latest from master
-      - uses: docker://ghcr.io/virgoone/semantic-release-action:latest
-        with:
-          branches: |
-            [
-              'master',
-              'next',
-              {
-                name: 'beta',
-                prerelease: true
-              },
-              {
-                name: 'alpha',
-                prerelease: true
-              }
-            ]
-          tag_format: 'v${version}'
-          extends: '@semantic-release/apm-config'
-          plugins: |
-            ['@semantic-release/commit-analyzer', '@semantic-release/release-notes-generator', '@semantic-release/changelog', '@semantic-release/npm', '@semantic-release/github', '@semantic-release/git']
+      - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
