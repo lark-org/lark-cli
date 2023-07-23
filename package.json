@@ -76,7 +76,7 @@
     "check-dependencies": "^1.1.0",
     "cli-table3": "^0.6.3",
     "commander": "^10.0.1",
-    "consolidate": "^0.16.0",
+    "consolidate": "^1.0.1",
     "css-loader": "^6.8.1",
     "css-minimizer-webpack-plugin": "^5.0.0",
     "deepmerge": "^4.3.1",
