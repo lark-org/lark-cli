@@ -7377,7 +7377,7 @@ packages:
     peerDependencies:
       webpack: ^4.0.0 || ^5.0.0
     dependencies:
-      loader-utils: 2.0.2
+      loader-utils: 2.0.4
       schema-utils: 3.1.1
       webpack: 5.88.1(esbuild@0.17.19)
     dev: false
@@ -8894,15 +8894,6 @@ packages:
   /loader-runner@4.3.0:
     resolution: {integrity: sha512-3R/1M+yS3j5ou80Me59j7F9IMs4PXs3VqRrm0TU3AbKPxlmpoY1TNscJV/oGJXo8qCatFGTfDbY6W6ipGOYXfg==}
     engines: {node: '>=6.11.5'}
-
-  /loader-utils@2.0.2:
-    resolution: {integrity: sha512-TM57VeHptv569d/GKh6TAYdzKblwDNiumOdkFnejjD0XwTH87K90w3O7AiJRqdQoXygvi1VQTJTLGhJl7WqA7A==}
-    engines: {node: '>=8.9.0'}
-    dependencies:
-      big.js: 5.2.2
-      emojis-list: 3.0.0
-      json5: 2.2.3
-    dev: false
 
   /loader-utils@2.0.4:
     resolution: {integrity: sha512-xXqpXoINfFhgua9xiqD8fPFHgkoq1mmmpE92WlDbm9rNRd/EbRb+Gqf908T2DMfuHjjJlksiK2RbHVOdD/MqSw==}
@@ -11268,7 +11259,7 @@ packages:
     dependencies:
       adjust-sourcemap-loader: 4.0.0
       convert-source-map: 1.8.0
-      loader-utils: 2.0.2
+      loader-utils: 2.0.4
       postcss: 8.4.27
       source-map: 0.6.1
     dev: false
@@ -12513,7 +12504,7 @@ packages:
         optional: true
     dependencies:
       file-loader: 6.2.0(webpack@5.88.1)
-      loader-utils: 2.0.2
+      loader-utils: 2.0.4
       mime-types: 2.1.35
       schema-utils: 3.1.1
       webpack: 5.88.1(esbuild@0.17.19)
@@ -13021,7 +13012,7 @@ packages:
     peerDependencies:
       webpack: ^4.0.0 || ^5.0.0
     dependencies:
-      loader-utils: 2.0.2
+      loader-utils: 2.0.4
       schema-utils: 3.1.1
       webpack: 5.88.1(esbuild@0.17.19)
     dev: false
