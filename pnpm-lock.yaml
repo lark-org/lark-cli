@@ -5238,7 +5238,7 @@ packages:
     engines: {node: '>=0.8.0'}
     dependencies:
       graceful-fs: 4.2.11
-      minimist: 0.2.1
+      minimist: 0.2.4
       mout: 1.2.4
       osenv: 0.1.5
       untildify: 2.1.0
@@ -9204,8 +9204,8 @@ packages:
       brace-expansion: 2.0.1
     dev: false
 
-  /minimist@0.2.1:
-    resolution: {integrity: sha512-GY8fANSrTMfBVfInqJAY41QkOM+upUTytK1jZ0c8+3HdHrJxBJ3rF5i9moClXTE8uUSnUo8cAsCoxDXvSY4DHg==}
+  /minimist@0.2.4:
+    resolution: {integrity: sha512-Pkrrm8NjyQ8yVt8Am9M+yUt74zE3iokhzbG1bFVNjLB92vwM71hf40RkEsryg98BujhVOncKm/C1xROxZ030LQ==}
     dev: false
 
   /minimist@1.2.6:
