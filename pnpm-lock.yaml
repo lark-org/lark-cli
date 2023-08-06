@@ -43,7 +43,7 @@ dependencies:
     version: 7.22.5(@babel/core@7.22.8)
   '@pmmmwh/react-refresh-webpack-plugin':
     specifier: ^0.5.10
-    version: 0.5.10(react-refresh@0.14.0)(webpack-dev-server@4.15.0)(webpack@5.88.1)
+    version: 0.5.10(react-refresh@0.14.0)(webpack-dev-server@4.15.1)(webpack@5.88.1)
   '@svgr/webpack':
     specifier: ^8.0.1
     version: 8.0.1
@@ -244,7 +244,7 @@ dependencies:
     version: 6.5.1
   webpack-dev-server:
     specifier: ^4.15.0
-    version: 4.15.0(webpack@5.88.1)
+    version: 4.15.1(webpack@5.88.1)
   webpack-manifest-plugin:
     specifier: ^5.0.0
     version: 5.0.0(webpack@5.88.1)
@@ -3381,7 +3381,7 @@ packages:
       tslib: 2.5.3
     dev: true
 
-  /@pmmmwh/react-refresh-webpack-plugin@0.5.10(react-refresh@0.14.0)(webpack-dev-server@4.15.0)(webpack@5.88.1):
+  /@pmmmwh/react-refresh-webpack-plugin@0.5.10(react-refresh@0.14.0)(webpack-dev-server@4.15.1)(webpack@5.88.1):
     resolution: {integrity: sha512-j0Ya0hCFZPd4x40qLzbhGsh9TMtdb+CJQiso+WxLOPNasohq9cc5SNUcwsZaRH6++Xh91Xkm/xHCkuIiIu0LUA==}
     engines: {node: '>= 10.13'}
     peerDependencies:
@@ -3418,7 +3418,7 @@ packages:
       schema-utils: 3.1.1
       source-map: 0.7.4
       webpack: 5.88.1(esbuild@0.17.19)
-      webpack-dev-server: 4.15.0(webpack@5.88.1)
+      webpack-dev-server: 4.15.1(webpack@5.88.1)
     dev: false
 
   /@polka/url@1.0.0-next.21:
@@ -4371,8 +4371,8 @@ packages:
       source-map: 0.6.1
     dev: true
 
-  /@types/ws@8.5.3:
-    resolution: {integrity: sha512-6YOoWjruKj1uLf3INHH7D3qTXwFfEsg1kf3c0uDdSBJwfa/llkwIjrAGV7j7mVgGNbzTQ3HiHKKDXl6bJPD97w==}
+  /@types/ws@8.5.5:
+    resolution: {integrity: sha512-lwhs8hktwxSjf9UaZ9tG5M03PGogvFaH8gUgLNbN9HKIg0dvv6q+gkSuJ8HN4/VbyxkuLzCjlN7GquQ0gUJfIg==}
     dependencies:
       '@types/node': 18.0.0
     dev: false
@@ -12614,8 +12614,8 @@ packages:
       webpack: 5.88.1(esbuild@0.17.19)
     dev: false
 
-  /webpack-dev-server@4.15.0(webpack@5.88.1):
-    resolution: {integrity: sha512-HmNB5QeSl1KpulTBQ8UT4FPrByYyaLxpJoQ0+s7EvUrMc16m0ZS1sgb1XGqzmgCPk0c9y+aaXxn11tbLzuM7NQ==}
+  /webpack-dev-server@4.15.1(webpack@5.88.1):
+    resolution: {integrity: sha512-5hbAst3h3C3L8w6W4P96L5vaV0PxSmJhxZvWKYIdgxOQm8pNZ5dEOmmSLBVpP85ReeyRt6AS1QJNyo/oFFPeVA==}
     engines: {node: '>= 12.13.0'}
     hasBin: true
     peerDependencies:
@@ -12633,7 +12633,7 @@ packages:
       '@types/serve-index': 1.9.1
       '@types/serve-static': 1.15.0
       '@types/sockjs': 0.3.33
-      '@types/ws': 8.5.3
+      '@types/ws': 8.5.5
       ansi-html-community: 0.0.8
       bonjour-service: 1.0.13
       chokidar: 3.5.3
