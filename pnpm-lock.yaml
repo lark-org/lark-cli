@@ -28,7 +28,7 @@ dependencies:
     version: 7.18.6(@babel/core@7.22.8)
   '@babel/plugin-transform-react-constant-elements':
     specifier: ^7.22.3
-    version: 7.22.3(@babel/core@7.22.8)
+    version: 7.22.5(@babel/core@7.22.8)
   '@babel/plugin-transform-runtime':
     specifier: ^7.22.4
     version: 7.22.9(@babel/core@7.22.8)
@@ -2103,14 +2103,14 @@ packages:
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/plugin-transform-react-constant-elements@7.22.3(@babel/core@7.22.8):
-    resolution: {integrity: sha512-b5J6muxQYp4H7loAQv/c7GO5cPuRA6H5hx4gO+/Hn+Cu9MRQU0PNiUoWq1L//8sq6kFSNxGXFb2XTaUfa9y+Pg==}
+  /@babel/plugin-transform-react-constant-elements@7.22.5(@babel/core@7.22.8):
+    resolution: {integrity: sha512-BF5SXoO+nX3h5OhlN78XbbDrBOffv+AxPP2ENaJOVqjWCgBDeOY3WcaUcddutGSfoap+5NEQ/q/4I3WZIvgkXA==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.22.8
-      '@babel/helper-plugin-utils': 7.21.5
+      '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
   /@babel/plugin-transform-react-display-name@7.22.5(@babel/core@7.22.8):
@@ -4006,7 +4006,7 @@ packages:
     engines: {node: '>=14'}
     dependencies:
       '@babel/core': 7.22.8
-      '@babel/plugin-transform-react-constant-elements': 7.22.3(@babel/core@7.22.8)
+      '@babel/plugin-transform-react-constant-elements': 7.22.5(@babel/core@7.22.8)
       '@babel/preset-env': 7.22.7(@babel/core@7.22.8)
       '@babel/preset-react': 7.22.5(@babel/core@7.22.8)
       '@babel/preset-typescript': 7.22.5(@babel/core@7.22.8)
