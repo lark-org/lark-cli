@@ -282,7 +282,7 @@ devDependencies:
     version: 2.4.4
   '@types/react-dev-utils':
     specifier: ^9.0.11
-    version: 9.0.11
+    version: 9.0.15
   '@types/webpack-bundle-analyzer':
     specifier: ^4.6.0
     version: 4.6.0(esbuild@0.17.19)
@@ -4325,12 +4325,13 @@ packages:
   /@types/range-parser@1.2.4:
     resolution: {integrity: sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==}
 
-  /@types/react-dev-utils@9.0.11:
-    resolution: {integrity: sha512-SdHtle/1hyImI1VzJUp20pthFwHY2O0Pq5QWIbPyku0SboPxqbyfwFwOlrr5d4yiZRr1in7SQ4Z0IiJVrJiJrg==}
+  /@types/react-dev-utils@9.0.15:
+    resolution: {integrity: sha512-JSZZtC8f5FD3FvlT8F6dPojPH6u0f+E/+g9DqXgQo/7GvCdPYiK+Q+mMajZClqH/f5SjyYop7v6uiLyfgnyLQA==}
     dependencies:
       '@types/eslint': 8.4.6
       '@types/express': 4.17.13
       '@types/html-webpack-plugin': 3.2.6
+      '@types/node': 18.0.0
       '@types/webpack': 4.41.32
       '@types/webpack-dev-server': 3.11.6
     transitivePeerDependencies:
