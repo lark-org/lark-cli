@@ -43,7 +43,7 @@ dependencies:
     version: 7.22.5(@babel/core@7.22.10)
   '@pmmmwh/react-refresh-webpack-plugin':
     specifier: ^0.5.10
-    version: 0.5.10(react-refresh@0.14.0)(webpack-dev-server@4.15.1)(webpack@5.88.1)
+    version: 0.5.11(react-refresh@0.14.0)(webpack-dev-server@4.15.1)(webpack@5.88.1)
   '@svgr/webpack':
     specifier: ^8.0.1
     version: 8.0.1
@@ -3441,14 +3441,14 @@ packages:
       tslib: 2.5.3
     dev: true
 
-  /@pmmmwh/react-refresh-webpack-plugin@0.5.10(react-refresh@0.14.0)(webpack-dev-server@4.15.1)(webpack@5.88.1):
-    resolution: {integrity: sha512-j0Ya0hCFZPd4x40qLzbhGsh9TMtdb+CJQiso+WxLOPNasohq9cc5SNUcwsZaRH6++Xh91Xkm/xHCkuIiIu0LUA==}
+  /@pmmmwh/react-refresh-webpack-plugin@0.5.11(react-refresh@0.14.0)(webpack-dev-server@4.15.1)(webpack@5.88.1):
+    resolution: {integrity: sha512-7j/6vdTym0+qZ6u4XbSAxrWBGYSdCfTzySkj7WAFgDLmSyWlOrWvpyzxlFh5jtw9dn0oL/jtW+06XfFiisN3JQ==}
     engines: {node: '>= 10.13'}
     peerDependencies:
       '@types/webpack': 4.x || 5.x
       react-refresh: '>=0.10.0 <1.0.0'
       sockjs-client: ^1.4.0
-      type-fest: '>=0.17.0 <4.0.0'
+      type-fest: '>=0.17.0 <5.0.0'
       webpack: '>=4.43.0 <6.0.0'
       webpack-dev-server: 3.x || 4.x
       webpack-hot-middleware: 2.x
@@ -3475,7 +3475,7 @@ packages:
       html-entities: 2.3.3
       loader-utils: 2.0.4
       react-refresh: 0.14.0
-      schema-utils: 3.1.1
+      schema-utils: 3.3.0
       source-map: 0.7.4
       webpack: 5.88.1(esbuild@0.17.19)
       webpack-dev-server: 4.15.1(webpack@5.88.1)
