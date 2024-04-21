@@ -43,7 +43,7 @@ dependencies:
     version: 7.22.5(@babel/core@7.22.10)
   '@pmmmwh/react-refresh-webpack-plugin':
     specifier: ^0.5.10
-    version: 0.5.11(react-refresh@0.14.0)(webpack-dev-server@4.15.1)(webpack@5.88.1)
+    version: 0.5.11(react-refresh@0.14.0)(webpack-dev-server@4.15.2)(webpack@5.88.1)
   '@svgr/webpack':
     specifier: ^8.0.1
     version: 8.0.1
@@ -244,7 +244,7 @@ dependencies:
     version: 6.5.1
   webpack-dev-server:
     specifier: ^4.15.0
-    version: 4.15.1(webpack@5.88.1)
+    version: 4.15.2(webpack@5.88.1)
   webpack-manifest-plugin:
     specifier: ^5.0.0
     version: 5.0.0(webpack@5.88.1)
@@ -3443,7 +3443,7 @@ packages:
       tslib: 2.5.3
     dev: true
 
-  /@pmmmwh/react-refresh-webpack-plugin@0.5.11(react-refresh@0.14.0)(webpack-dev-server@4.15.1)(webpack@5.88.1):
+  /@pmmmwh/react-refresh-webpack-plugin@0.5.11(react-refresh@0.14.0)(webpack-dev-server@4.15.2)(webpack@5.88.1):
     resolution: {integrity: sha512-7j/6vdTym0+qZ6u4XbSAxrWBGYSdCfTzySkj7WAFgDLmSyWlOrWvpyzxlFh5jtw9dn0oL/jtW+06XfFiisN3JQ==}
     engines: {node: '>= 10.13'}
     peerDependencies:
@@ -3480,7 +3480,7 @@ packages:
       schema-utils: 3.3.0
       source-map: 0.7.4
       webpack: 5.88.1(esbuild@0.17.19)
-      webpack-dev-server: 4.15.1(webpack@5.88.1)
+      webpack-dev-server: 4.15.2(webpack@5.88.1)
     dev: false
 
   /@polka/url@1.0.0-next.21:
@@ -5927,11 +5927,6 @@ packages:
       safe-buffer: 5.2.1
     dev: false
 
-  /content-type@1.0.4:
-    resolution: {integrity: sha512-hIP3EEPs8tB9AT1L+NUqtwOAps4mk2Zob89MWXMHjHWg9milF/j4osnnQLXBCBFBk/tvIG/tUc9mOUJiPBhPXA==}
-    engines: {node: '>= 0.6'}
-    dev: false
-
   /content-type@1.0.5:
     resolution: {integrity: sha512-nTjqfcBFEipKdXCv4YDQWCfmcLZKm81ldF0pAopTvyrFGVbcR6P/VAAd5G7N+0tTr8QqiU0tFadD6FK4NtJwOA==}
     engines: {node: '>= 0.6'}
@@ -7377,7 +7372,7 @@ packages:
       array-flatten: 1.1.1
       body-parser: 1.20.2
       content-disposition: 0.5.4
-      content-type: 1.0.4
+      content-type: 1.0.5
       cookie: 0.6.0
       cookie-signature: 1.0.6
       debug: 2.6.9
@@ -12759,8 +12754,8 @@ packages:
       webpack: 5.88.1(esbuild@0.17.19)
     dev: false
 
-  /webpack-dev-server@4.15.1(webpack@5.88.1):
-    resolution: {integrity: sha512-5hbAst3h3C3L8w6W4P96L5vaV0PxSmJhxZvWKYIdgxOQm8pNZ5dEOmmSLBVpP85ReeyRt6AS1QJNyo/oFFPeVA==}
+  /webpack-dev-server@4.15.2(webpack@5.88.1):
+    resolution: {integrity: sha512-0XavAZbNJ5sDrCbkpWL8mia0o5WPOd2YGtxrEiZkBK9FjLppIUK2TgxK6qGD2P3hUXTJNNPVibrerKcx5WkR1g==}
     engines: {node: '>= 12.13.0'}
     hasBin: true
     peerDependencies:
