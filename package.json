@@ -69,7 +69,7 @@
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-module-resolver": "^5.0.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "bfj": "^7.0.2",
+    "bfj": "^8.0.0",
     "browserslist": "^4.21.7",
     "case-sensitive-paths-webpack-plugin": "^2.4.0",
     "chalk": "^4.1.2",
