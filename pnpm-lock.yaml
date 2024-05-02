@@ -100,7 +100,7 @@ dependencies:
     version: 10.0.1
   consolidate:
     specifier: ^0.16.0
-    version: 0.16.0(ejs@3.1.9)(lodash@4.17.21)
+    version: 0.16.0(ejs@3.1.10)(lodash@4.17.21)
   css-loader:
     specifier: ^6.8.1
     version: 6.8.1(webpack@5.88.1)
@@ -112,7 +112,7 @@ dependencies:
     version: 4.3.1
   ejs:
     specifier: ^3.1.9
-    version: 3.1.9
+    version: 3.1.10
   esbuild:
     specifier: ^0.17.19
     version: 0.17.19
@@ -3941,7 +3941,7 @@ packages:
   /@surma/rollup-plugin-off-main-thread@2.2.3:
     resolution: {integrity: sha512-lR8q/9W7hZpMWweNiAKU7NQerBnzQQLvi8qnTDU/fxItPhtZVMbPV3lbCwjhIlNBe9Bbr5V+KHshvWmVSG9cxQ==}
     dependencies:
-      ejs: 3.1.9
+      ejs: 3.1.10
       json5: 2.2.3
       magic-string: 0.25.9
       string.prototype.matchall: 4.0.7
@@ -5763,7 +5763,7 @@ packages:
     engines: {node: '>=0.8'}
     dev: false
 
-  /consolidate@0.16.0(ejs@3.1.9)(lodash@4.17.21):
+  /consolidate@0.16.0(ejs@3.1.10)(lodash@4.17.21):
     resolution: {integrity: sha512-Nhl1wzCslqXYTJVDyJCu3ODohy9OfBMB5uD2BiBTzd7w+QY0lBzafkR8y8755yMYHAaMD4NuzbAw03/xzfw+eQ==}
     engines: {node: '>= 0.10.0'}
     peerDependencies:
@@ -5929,7 +5929,7 @@ packages:
         optional: true
     dependencies:
       bluebird: 3.7.2
-      ejs: 3.1.9
+      ejs: 3.1.10
       lodash: 4.17.21
     dev: false
 
@@ -6569,8 +6569,8 @@ packages:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
     dev: false
 
-  /ejs@3.1.9:
-    resolution: {integrity: sha512-rC+QVNMJWv+MtPgkt0y+0rVEIdbtxVADApW9JXrUVlzHetgcyczP/E7DJmWJ4fJCZF2cPcBk0laWO9ZHMG3DmQ==}
+  /ejs@3.1.10:
+    resolution: {integrity: sha512-UeJmFfOrAQS8OJWPZ4qtgHyWExa088/MtK5UEyoJGFH67cDEXkZSviOiKRCZ4Xij0zxI3JECgYs3oKx+AizQBA==}
     engines: {node: '>=0.10.0'}
     hasBin: true
     dependencies:
