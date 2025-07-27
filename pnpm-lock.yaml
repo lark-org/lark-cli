@@ -232,7 +232,7 @@ importers:
         version: 5.3.14(esbuild@0.17.19)(webpack@5.94.0(esbuild@0.17.19))
       thread-loader:
         specifier: ^4.0.2
-        version: 4.0.2(webpack@5.94.0(esbuild@0.17.19))
+        version: 4.0.4(webpack@5.94.0(esbuild@0.17.19))
       url-loader:
         specifier: ^4.1.1
         version: 4.1.1(file-loader@6.2.0(webpack@5.94.0(esbuild@0.17.19)))(webpack@5.94.0(esbuild@0.17.19))
@@ -6756,8 +6756,8 @@ packages:
   thenify@3.3.1:
     resolution: {integrity: sha512-RVZSIV5IG10Hk3enotrhvz0T9em6cyHBLkH/YAZuKqd8hRkKhSfCGIcP2KUY0EPxndzANBmNllzWPwak+bheSw==}
 
-  thread-loader@4.0.2:
-    resolution: {integrity: sha512-UOk/KBydsQjh4Ja5kocxDUzhv11KYptHN/h8gdSwo6/MBkYrWqQua6K2qwlpXnCXS9c/uLs8F/JF8rpveF0+fA==}
+  thread-loader@4.0.4:
+    resolution: {integrity: sha512-tXagu6Hivd03wB2tiS1bqvw345sc7mKei32EgpYpq31ZLes9FN0mEK2nKzXLRFgwt3PsBB0E/MZDp159rDoqwg==}
     engines: {node: '>= 16.10.0'}
     peerDependencies:
       webpack: ^5.0.0
@@ -14721,12 +14721,12 @@ snapshots:
     dependencies:
       any-promise: 1.3.0
 
-  thread-loader@4.0.2(webpack@5.94.0(esbuild@0.17.19)):
+  thread-loader@4.0.4(webpack@5.94.0(esbuild@0.17.19)):
     dependencies:
       json-parse-better-errors: 1.0.2
       loader-runner: 4.3.0
       neo-async: 2.6.2
-      schema-utils: 4.0.1
+      schema-utils: 4.3.2
       webpack: 5.94.0(esbuild@0.17.19)
 
   thread-stream@0.15.2:
