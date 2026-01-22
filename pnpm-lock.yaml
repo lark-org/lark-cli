@@ -103,7 +103,7 @@ importers:
         version: 10.0.1
       consolidate:
         specifier: ^0.16.0
-        version: 0.16.0(ejs@3.1.10)(lodash@4.17.21)
+        version: 0.16.0(ejs@3.1.10)(lodash@4.17.23)
       css-loader:
         specifier: ^6.8.1
         version: 6.8.1(webpack@5.94.0(esbuild@0.25.8))
@@ -151,7 +151,7 @@ importers:
         version: 11.1.2(less@4.4.0)(webpack@5.94.0(esbuild@0.25.8))
       lodash:
         specifier: ^4.17.21
-        version: 4.17.21
+        version: 4.17.23
       metalsmith:
         specifier: ^2.6.0
         version: 2.6.1
@@ -5438,8 +5438,8 @@ packages:
   lodash.uniq@4.5.0:
     resolution: {integrity: sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==}
 
-  lodash@4.17.21:
-    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+  lodash@4.17.23:
+    resolution: {integrity: sha512-LgVTMpQtIopCi79SJeDiP0TfWi5CNEc/L/aRdTh3yIvmZXTnheWpKjSZhnvMl8iXbC1tFg9gdHHDMLoV7CnG+w==}
 
   log-symbols@4.1.0:
     resolution: {integrity: sha512-8XPvpAA8uyhfteu8pIvQxpJZ7SYYdpUivZpGy6sFsBuKRY/7rQGavedeB8aK+Zkyq6upMFVL/9AW6vOYzfRyLg==}
@@ -7130,6 +7130,7 @@ packages:
   source-map@0.8.0-beta.0:
     resolution: {integrity: sha512-2ymg6oRBpebeZi9UUNsgQ89bhx01TcTkmNTGnNO88imTmbSgy4nfujrgVEFKWpMTEGA11EDkTt7mqObTPdigIA==}
     engines: {node: '>= 8'}
+    deprecated: The work that was done in this beta branch won't be included in future versions
 
   sourcemap-codec@1.4.8:
     resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
@@ -11328,7 +11329,7 @@ snapshots:
       '@babel/helper-module-imports': 7.18.6
       '@babel/types': 7.18.10
       glob: 7.2.3
-      lodash: 4.17.21
+      lodash: 4.17.23
       require-package-name: 2.0.1
 
   babel-plugin-macros@3.1.0:
@@ -11752,12 +11753,12 @@ snapshots:
 
   connect-history-api-fallback@2.0.0: {}
 
-  consolidate@0.16.0(ejs@3.1.10)(lodash@4.17.21):
+  consolidate@0.16.0(ejs@3.1.10)(lodash@4.17.23):
     dependencies:
       bluebird: 3.7.2
     optionalDependencies:
       ejs: 3.1.10
-      lodash: 4.17.21
+      lodash: 4.17.23
 
   content-disposition@0.5.4:
     dependencies:
@@ -13268,7 +13269,7 @@ snapshots:
     dependencies:
       '@types/html-minifier-terser': 6.1.0
       html-minifier-terser: 6.1.0
-      lodash: 4.17.21
+      lodash: 4.17.23
       pretty-error: 4.0.0
       tapable: 2.2.1
       webpack: 5.94.0(esbuild@0.25.8)
@@ -13918,7 +13919,7 @@ snapshots:
 
   lodash.uniq@4.5.0: {}
 
-  lodash@4.17.21: {}
+  lodash@4.17.23: {}
 
   log-symbols@4.1.0:
     dependencies:
@@ -14146,7 +14147,7 @@ snapshots:
 
   node-emoji@1.11.0:
     dependencies:
-      lodash: 4.17.21
+      lodash: 4.17.23
 
   node-forge@1.3.1: {}
 
@@ -15096,7 +15097,7 @@ snapshots:
 
   pretty-error@4.0.0:
     dependencies:
-      lodash: 4.17.21
+      lodash: 4.17.23
       renderkid: 3.0.0
 
   pretty-format@27.5.1:
@@ -15313,7 +15314,7 @@ snapshots:
       css-select: 4.3.0
       dom-converter: 0.2.0
       htmlparser2: 6.1.0
-      lodash: 4.17.21
+      lodash: 4.17.23
       strip-ansi: 6.0.1
 
   repeat-element@1.1.4: {}
@@ -16281,7 +16282,7 @@ snapshots:
       chalk: 4.1.2
       commander: 7.2.0
       gzip-size: 6.0.0
-      lodash: 4.17.21
+      lodash: 4.17.23
       opener: 1.5.2
       sirv: 1.0.19
       ws: 7.5.9
@@ -16490,7 +16491,7 @@ snapshots:
       fast-json-stable-stringify: 2.1.0
       fs-extra: 9.1.0
       glob: 7.2.3
-      lodash: 4.17.21
+      lodash: 4.17.23
       pretty-bytes: 5.6.0
       rollup: 2.78.1
       rollup-plugin-terser: 7.0.2(rollup@2.78.1)
