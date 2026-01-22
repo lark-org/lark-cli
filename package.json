@@ -82,7 +82,7 @@
     "deepmerge": "^4.3.1",
     "ejs": "^3.1.9",
     "esbuild": "^0.25.0",
-    "esbuild-loader": "^3.0.1",
+    "esbuild-loader": "^4.3.0",
     "escape-string-regexp": "5.0.0",
     "execa": "5.1.1",
     "file-loader": "^6.2.0",
