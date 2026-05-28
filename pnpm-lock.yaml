@@ -9,10 +9,10 @@ importers:
   .:
     dependencies:
       '@aws-sdk/client-s3':
-        specifier: ^3.850.0
+        specifier: ^3.347.1
         version: 3.850.0
       '@babel/core':
-        specifier: ^7.22.10
+        specifier: ^7.22.1
         version: 7.22.10
       '@babel/plugin-proposal-class-properties':
         specifier: ^7.18.6
@@ -30,28 +30,28 @@ importers:
         specifier: ^7.18.6
         version: 7.18.6(@babel/core@7.22.10)
       '@babel/plugin-transform-react-constant-elements':
-        specifier: ^7.27.1
+        specifier: ^7.22.3
         version: 7.27.1(@babel/core@7.22.10)
       '@babel/plugin-transform-runtime':
-        specifier: ^7.23.4
+        specifier: ^7.22.4
         version: 7.23.4(@babel/core@7.22.10)
       '@babel/preset-env':
-        specifier: ^7.28.0
+        specifier: ^7.22.4
         version: 7.28.0(@babel/core@7.22.10)
       '@babel/preset-react':
-        specifier: ^7.24.1
+        specifier: ^7.22.3
         version: 7.24.1(@babel/core@7.22.10)
       '@babel/preset-typescript':
-        specifier: ^7.24.1
+        specifier: ^7.21.5
         version: 7.24.1(@babel/core@7.22.10)
       '@pmmmwh/react-refresh-webpack-plugin':
-        specifier: ^0.5.11
+        specifier: ^0.5.10
         version: 0.5.11(@types/webpack@4.41.32)(react-refresh@0.17.0)(type-fest@0.21.3)(webpack-dev-server@4.15.2(webpack@5.104.1(esbuild@0.25.8)))(webpack@5.104.1(esbuild@0.25.8))
       '@svgr/webpack':
         specifier: ^8.0.1
         version: 8.0.1
       '@umijs/mfsu':
-        specifier: ^4.4.11
+        specifier: ^4.0.70
         version: 4.4.11
       '@vue/preload-webpack-plugin':
         specifier: ^2.0.0
@@ -60,13 +60,13 @@ importers:
         specifier: ^10.1.0
         version: 10.1.0(eslint@8.42.0)
       babel-jest:
-        specifier: ^29.6.1
+        specifier: ^29.5.0
         version: 29.6.1(@babel/core@7.22.10)
       babel-loader:
-        specifier: ^9.1.3
+        specifier: ^9.1.2
         version: 9.1.3(@babel/core@7.22.10)(webpack@5.104.1(esbuild@0.25.8))
       babel-plugin-import:
-        specifier: ^1.13.8
+        specifier: ^1.13.6
         version: 1.13.8
       babel-plugin-lodash:
         specifier: ^3.3.4
@@ -75,7 +75,7 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0
       babel-plugin-module-resolver:
-        specifier: ^5.0.2
+        specifier: ^5.0.0
         version: 5.0.2
       babel-plugin-transform-react-remove-prop-types:
         specifier: ^0.4.24
@@ -84,7 +84,7 @@ importers:
         specifier: ^7.0.2
         version: 7.0.2
       browserslist:
-        specifier: ^4.28.1
+        specifier: ^4.21.7
         version: 4.28.1
       case-sensitive-paths-webpack-plugin:
         specifier: ^2.4.0
@@ -114,10 +114,10 @@ importers:
         specifier: ^4.3.1
         version: 4.3.1
       ejs:
-        specifier: ^3.1.10
+        specifier: ^3.1.9
         version: 3.1.10
       esbuild:
-        specifier: ^0.25.8
+        specifier: ^0.25.0
         version: 0.25.8
       esbuild-loader:
         specifier: ^3.0.1
@@ -132,34 +132,34 @@ importers:
         specifier: ^6.2.0
         version: 6.2.0(webpack@5.104.1(esbuild@0.25.8))
       fs-extra:
-        specifier: ^11.2.0
+        specifier: ^11.1.1
         version: 11.2.0
       global-modules:
         specifier: ^2.0.0
         version: 2.0.0
       html-webpack-plugin:
-        specifier: ^5.5.3
+        specifier: ^5.5.1
         version: 5.5.3(webpack@5.104.1(esbuild@0.25.8))
       ini:
         specifier: ^4.1.1
         version: 4.1.1
       less:
-        specifier: ^4.4.0
+        specifier: ^4.1.3
         version: 4.4.0
       less-loader:
         specifier: ^11.1.2
         version: 11.1.2(less@4.4.0)(webpack@5.104.1(esbuild@0.25.8))
       lodash:
-        specifier: ^4.18.1
+        specifier: ^4.17.21
         version: 4.18.1
       metalsmith:
-        specifier: ^2.6.1
+        specifier: ^2.6.0
         version: 2.6.1
       mime:
         specifier: ^3.0.0
         version: 3.0.0
       mini-css-extract-plugin:
-        specifier: ^2.9.0
+        specifier: ^2.7.6
         version: 2.9.0(webpack@5.104.1(esbuild@0.25.8))
       module-alias:
         specifier: ^2.2.3
@@ -171,7 +171,7 @@ importers:
         specifier: 5.4.1
         version: 5.4.1
       postcss:
-        specifier: ^8.5.10
+        specifier: ^8.4.24
         version: 8.5.10
       postcss-flexbugs-fixes:
         specifier: ^5.0.2
@@ -201,7 +201,7 @@ importers:
         specifier: ^1.3.0
         version: 1.3.0
       resolve:
-        specifier: ^1.22.10
+        specifier: ^1.22.2
         version: 1.22.10
       resolve-url-loader:
         specifier: ^5.0.0
@@ -213,31 +213,31 @@ importers:
         specifier: ^1.62.1
         version: 1.62.1
       sass-loader:
-        specifier: ^13.3.2
+        specifier: ^13.3.1
         version: 13.3.2(sass@1.62.1)(webpack@5.104.1(esbuild@0.25.8))
       semver:
-        specifier: ^7.7.2
+        specifier: ^7.5.1
         version: 7.7.2
       simple-git:
-        specifier: ^3.36.0
+        specifier: ^3.19.0
         version: 3.36.0
       style-loader:
         specifier: ^3.3.3
         version: 3.3.3(webpack@5.104.1(esbuild@0.25.8))
       tailwindcss:
-        specifier: ^3.3.3
+        specifier: ^3.3.2
         version: 3.3.3
       terser-webpack-plugin:
-        specifier: ^5.3.16
+        specifier: ^5.3.9
         version: 5.3.16(esbuild@0.25.8)(webpack@5.104.1(esbuild@0.25.8))
       thread-loader:
-        specifier: ^4.0.4
+        specifier: ^4.0.2
         version: 4.0.4(webpack@5.104.1(esbuild@0.25.8))
       url-loader:
         specifier: ^4.1.1
         version: 4.1.1(file-loader@6.2.0(webpack@5.104.1(esbuild@0.25.8)))(webpack@5.104.1(esbuild@0.25.8))
       webpack:
-        specifier: ^5.104.1
+        specifier: ^5.85.1
         version: 5.104.1(esbuild@0.25.8)
       webpack-bundle-analyzer:
         specifier: ^4.9.0
@@ -246,13 +246,13 @@ importers:
         specifier: ^6.5.1
         version: 6.5.1
       webpack-dev-server:
-        specifier: ^4.15.2
+        specifier: ^4.15.0
         version: 4.15.2(webpack@5.104.1(esbuild@0.25.8))
       webpack-manifest-plugin:
         specifier: ^5.0.0
         version: 5.0.0(webpack@5.104.1(esbuild@0.25.8))
       webpack-merge:
-        specifier: ^5.10.0
+        specifier: ^5.9.0
         version: 5.10.0
       workbox-webpack-plugin:
         specifier: ^7.0.0
@@ -261,17 +261,17 @@ importers:
         specifier: ^3.0.8
         version: 3.0.8(webpack@5.104.1(esbuild@0.25.8))
       ws:
-        specifier: ^8.17.1
-        version: 8.17.1
+        specifier: ^8.13.0
+        version: 8.21.0
     devDependencies:
       '@types/consolidate':
         specifier: ^0.14.1
         version: 0.14.1
       '@types/fs-extra':
-        specifier: ^11.0.4
+        specifier: ^11.0.1
         version: 11.0.4
       '@types/metalsmith':
-        specifier: ^2.6.0
+        specifier: ^2.3.1
         version: 2.6.0
       '@types/module-alias':
         specifier: ^2.0.1
@@ -283,7 +283,7 @@ importers:
         specifier: ^2.4.4
         version: 2.4.4
       '@types/react-dev-utils':
-        specifier: ^9.0.15
+        specifier: ^9.0.11
         version: 9.0.15
       '@types/webpack-bundle-analyzer':
         specifier: ^4.6.0
@@ -301,19 +301,19 @@ importers:
         specifier: ^3.5.5
         version: 3.5.5(@typescript-eslint/parser@5.30.0(eslint@8.42.0)(typescript@5.1.6))(eslint-plugin-import@2.32.0)(eslint@8.42.0)
       eslint-plugin-import:
-        specifier: ^2.32.0
+        specifier: ^2.27.5
         version: 2.32.0(@typescript-eslint/parser@5.30.0(eslint@8.42.0)(typescript@5.1.6))(eslint-import-resolver-typescript@3.5.5)(eslint@8.42.0)
       husky:
         specifier: ^8.0.3
         version: 8.0.3
       lint-staged:
-        specifier: ^13.2.3
+        specifier: ^13.2.2
         version: 13.2.3
       prettier:
         specifier: ^2.8.8
         version: 2.8.8
       typescript:
-        specifier: ^5.1.6
+        specifier: ^5.1.3
         version: 5.1.6
 
 packages:
@@ -7718,8 +7718,8 @@ packages:
     resolution: {integrity: sha512-7KxauUdBmSdWnmpaGFg+ppNjKF8uNLry8LyzjauQDOVONfFLNKrKvQOxZ/VuTIcS/gge/YNahf5RIIQWTSarlg==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
 
-  ws@7.5.9:
-    resolution: {integrity: sha512-F+P9Jil7UiSKSkppIiD94dN07AwvFixvLIj1Og1Rl9GGMuNipJnV9JzjD6XuqmAeiswGvUmNLjr5cFuXwNS77Q==}
+  ws@7.5.11:
+    resolution: {integrity: sha512-zS54Oen9bITtp7kp2XM3AydrCIq1D+HwJOuH+c+e4LfpL/lotP5osijd+UoMnxwAam1GN8R4KtLAyIrIcBNpiA==}
     engines: {node: '>=8.3.0'}
     peerDependencies:
       bufferutil: ^4.0.1
@@ -7730,8 +7730,8 @@ packages:
       utf-8-validate:
         optional: true
 
-  ws@8.17.1:
-    resolution: {integrity: sha512-6XQFvXTkbfUOZOKKILFG1PDK2NDQs4azKQl26T0YS5CxqWLgXajbPZ+h4gZekJyRqFU8pvnbAbbs/3TgRPy+GQ==}
+  ws@8.21.0:
+    resolution: {integrity: sha512-Vsp28b7DRcimFQvrqu2Wek3z1iYxDCWqHYB8Qsnk/S4RfaCQzPGPyBNuVjJV3cd6UiKtUtp6sNM77gWvzcCH+g==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
@@ -16084,7 +16084,7 @@ snapshots:
       lodash: 4.18.1
       opener: 1.5.2
       sirv: 1.0.19
-      ws: 7.5.9
+      ws: 7.5.11
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -16134,7 +16134,7 @@ snapshots:
       sockjs: 0.3.24
       spdy: 4.0.2
       webpack-dev-middleware: 5.3.4(webpack@5.104.1(esbuild@0.25.8))
-      ws: 8.17.1
+      ws: 8.21.0
     optionalDependencies:
       webpack: 5.104.1(esbuild@0.25.8)
     transitivePeerDependencies:
@@ -16428,9 +16428,9 @@ snapshots:
       imurmurhash: 0.1.4
       signal-exit: 3.0.7
 
-  ws@7.5.9: {}
+  ws@7.5.11: {}
 
-  ws@8.17.1: {}
+  ws@8.21.0: {}
 
   yallist@3.1.1: {}
 
