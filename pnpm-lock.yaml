@@ -99,8 +99,8 @@ importers:
         specifier: ^0.6.3
         version: 0.6.3
       commander:
-        specifier: ^10.0.1
-        version: 10.0.1
+        specifier: ^14.0.0
+        version: 14.0.0
       consolidate:
         specifier: ^0.16.0
         version: 0.16.0(ejs@3.1.10)(lodash@4.18.1)
@@ -3328,6 +3328,10 @@ packages:
   commander@10.0.1:
     resolution: {integrity: sha512-y4Mg2tXshplEbSGzx7amzPwKKOCGuoSRP/CjEdwwk0FOGlUbq6lKuoyDZTNZkmxHdJtp54hdfY/JUrdL7Xfdug==}
     engines: {node: '>=14'}
+
+  commander@14.0.0:
+    resolution: {integrity: sha512-2uM9rYjPvyq39NwLRqaiLtWHyDC1FvryJDa2ATTVims5YAS4PupsEQsDvP14FqhFr0P49CYDugi59xaxJlTXRA==}
+    engines: {node: '>=20'}
 
   commander@2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
@@ -11466,6 +11470,8 @@ snapshots:
   colorette@2.0.19: {}
 
   commander@10.0.1: {}
+
+  commander@14.0.0: {}
 
   commander@2.20.3: {}
 
